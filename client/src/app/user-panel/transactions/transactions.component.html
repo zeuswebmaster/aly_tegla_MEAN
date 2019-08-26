@@ -1,0 +1,322 @@
+<div class="row">
+  <div class="col-md-12 page-title">
+    <h4>Transactions</h4>
+  </div>
+</div>
+<div class="row transactionHtml">
+  <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                      <table id="transactionMainTbl" style="display: none;" class="table">
+                        <thead>
+                          <tr>
+                              <th>
+								  Transaction Date
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div id="filter1" class="ui top left pointing dropdown icon button filter  ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									  <div class="menu">
+										<div class="header mt-4">
+										  Filter by date range
+										  <div class="item" style="display: none;"></div>
+										  <div class="pl-0 mt-4 pb-2 mb-4">
+											<button type="button" class="active item btn btn-xs  py-2 mr-2 trBtn" data-duration="1">1 month</button>
+											<button type="button" class="active item btn btn-xs  py-2 mr-2 trBtn" data-duration="2">3 months</button>
+											<button type="button" class="active item btn btn-xs py-2 mr-2 trBtn" data-duration="3">6 months</button>
+											<input type="text" id="search_checkin" class="mr-2 ml-4" placeholder="From date" name="daterange" value="" readonly />
+											<input type="text" id="search_checkout" name="daterange" placeholder="To date" value="" readonly/>
+											<input type="hidden" id="fromDateTS" />
+											<input type="hidden" id="toDateTS" />
+										</div>
+									  </div>
+									</div>
+									</div>
+							  </th>
+                              <th>
+								  Merchant
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								   <div id="filter2" class="ui top left pointing dropdown icon button filter  ml-1">
+									  <input type="hidden" name="filters">
+									  <i class="filter icon customIcon"></i>
+									  <span class="notify-icon"></span>
+									  <span class="text"></span>
+									  <div class="menu">
+										<div class="header mt-4">
+											Filter by Merchant
+											</div>
+										<div class="ui icon search input mt-4">
+										  <i class="search icon"></i>
+										  <input type="text" placeholder="Search">
+										</div>
+										<div class="mulFilters2 col mb-1"></div>
+										<div class="scrolling menu" id="merchantList">
+											<div class="item" style="display:none" >-</div>
+
+										</div>
+									</div>
+									</div>
+									<input type="hidden" id="activeMerchants" />
+							  </th>
+							  <th>
+								  Institution
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div id="filter3" class="ui top left multiple pointing dropdown icon button filter  ml-1">
+									  <input type="hidden" name="filters">
+									  <i class="filter icon customIcon"></i>
+									  <span class="notify-icon"></span>
+									  <span class="text"></span>
+									  <div class="menu">
+										<div class="header mt-4">
+										  Filter by Accounts
+										</div>
+										<div class="ui icon search input mt-4">
+											<i class="search icon"></i>
+											<input type="text" placeholder="Search">
+										</div>
+										<div class="mulFilters3 col mb-1" ></div>
+										<div class="scrolling menu" id="accountsList">
+										<div class="item" style="display:none" >-</div>
+
+									  </div>
+									</div>
+									</div>
+									<input type="hidden" id="activeAccounts" />
+							  </th>
+                <th>
+								Status
+								<span class="sort-icon">&nbsp;&nbsp;</span>
+								<div id="filter4" class="ui top left pointing dropdown icon button filter  ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									  <div class="menu">
+										<div class="header mt-4 mb-3">
+										  Filter by Status
+										</div>
+										<div class="item active selected" style="font-size: 11px;">
+										  ALL
+										</div>
+										<div class="item" style="font-size: 11px;">
+										  PENDING
+										</div>
+										<div class="item" style="font-size: 11px;">
+										  POSTED
+										</div>
+									  </div>
+									</div>
+									<input type="hidden" id="status" value="ALL" />
+							  </th>
+                              <th>
+								Account
+								<span class="sort-icon">&nbsp;&nbsp;</span>
+								<div id="filter5" class="ui top left pointing multiple dropdown icon button filter ml-1">
+								  <input type="hidden" name="filters">
+								  <i class="filter icon customIcon"></i>
+								  <span class="notify-icon"></span>
+								  <span class="text"></span>
+								  <div class="menu">
+									<div class="ui icon search input">
+									  <i class="search icon"></i>
+									  <input type="text" placeholder="Search tags...">
+									</div>
+									<div class="divider"></div>
+									<div class="header mt-4">
+									  Filter by Accounts
+									</div>
+									<div class="mulFilters5 col mb-1" ></div>
+									<div class="scrolling menu" id="categoryList">
+									<div class="item" style="display:none" ></div>
+
+									</div>
+								  </div>
+								</div>
+								<input type="hidden" id="activeCategories" />
+							  </th>
+                              <th>
+								  Amount
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div id="filter6" class="ui top right pointing dropdown icon button filter ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									  <div class="menu">
+										<div class="header mt-4">
+										  Filter by Amount
+										</div>
+										<div class="item" style="display: none;">
+										</div>
+										<div class="pl-0 d-md-flex">
+											<input id="minAmt" class="form-control mb-4 mt-2 ml-3 mr-2 p-1 quantity" type="number" placeholder="Min" min="0" max="9999999" />
+											<div class="quantity-nav">
+												<div class="quantity-button quantity-up up1">▲</div>
+												<div class="quantity-button quantity-down down1">▼</div>
+											</div>
+											<input id="maxAmt" class="form-control mb-4 mt-2 ml-2 mr-3 p-1 quantity" type="number" placeholder="Max" />
+											<div class="quantity-nav">
+												<div class="quantity-button quantity-up up2">▲</div>
+												<div class="quantity-button quantity-down down2">▼</div>
+											</div>
+										</div>
+									  </div>
+									  </div>
+							  </th>
+							  <th>Top Category<span class="sort-icon">&nbsp;&nbsp;</span></th>
+							  <th>Category<span class="sort-icon">&nbsp;&nbsp;</span></th>
+							  <th>Account ID<span class="sort-icon">&nbsp;&nbsp;</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+					  </table>
+					  <table id="transactionMainTblFake" class="table">
+                        <thead>
+                          <tr>
+                              <th>
+								  Transaction Date
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div  class="ui top left pointing dropdown icon button filter  ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									</div>
+							  </th>
+                              <th>
+								  Merchant
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div class="ui top left pointing dropdown icon button filter  ml-1">
+									<input type="hidden" name="filters">
+									<i class="filter icon customIcon"></i>
+									<span class="notify-icon"></span>
+									<span class="text"></span>
+									<div class="menu">
+									<div class="header col">
+
+									Filter by Merchants
+									</div>
+									  <div class="ui icon search input">
+										<i class="search icon"></i>
+										<input type="text" placeholder="Search tags...">
+									  </div>
+									  <div class="divider"></div>
+
+									  <div class="mulFilters2 col mb-1"></div>
+									  <div class="scrolling menu" id="merchantList">
+										  <div class="item" style="display:none" >-</div>
+
+									  </div>
+								  </div>
+								  </div>
+									<input type="hidden" id="activeMerchants" />
+							  </th>
+							  <th>
+								  Institution
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div class="ui top right multiple pointing dropdown icon button filter  ml-1">
+									  <input type="hidden" name="filters">
+									  <i class="filter icon customIcon"></i>
+									  <span class="notify-icon"></span>
+									  <span class="text"></span>
+									  <div class="menu">
+										<div class="ui icon search input">
+										  <i class="search icon"></i>
+										  <input type="text" placeholder="Search tags...">
+										</div>
+										<div class="divider"></div>
+										<div class="header col">
+										  <i class="tags icon"></i>
+										  Filter by Accounts
+										</div>
+										<div class="mulFilters3 col mb-1" ></div>
+										<div class="scrolling menu" id="accountsList">
+										<div class="item" style="display:none" >-</div>
+
+									  </div>
+									</div>
+									</div>
+									<input type="hidden" id="activeAccounts" />
+							  </th>
+                  <th>
+								Status
+								<span class="sort-icon">&nbsp;&nbsp;</span>
+								<div class="ui top left pointing dropdown icon button filter  ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									  <div class="menu">
+										<div class="header">
+										  <i class="tags icon"></i>
+										  Filter by Status
+										</div>
+										<div class="item active selected">
+										  ALL
+										</div>
+										<div class="item">
+										  PENDING
+										</div>
+										<div class="item">
+										  POSTED
+										</div>
+									  </div>
+									</div>
+									<input type="hidden" id="status" value="ALL" />
+							  </th>
+                              <th>
+								Account
+								<span class="sort-icon">&nbsp;&nbsp;</span>
+								<div class="ui top left pointing multiple dropdown icon button filter ml-1">
+								  <input type="hidden" name="filters">
+								  <i class="filter icon customIcon"></i>
+								  <span class="notify-icon"></span>
+								  <span class="text"></span>
+								  <div class="menu">
+									<div class="ui icon search input">
+									  <i class="search icon"></i>
+									  <input type="text" placeholder="Search tags...">
+									</div>
+									<div class="divider"></div>
+									<div class="header col">
+									  <i class="tags icon"></i>
+									  Filter by Category
+									</div>
+									<div class="mulFilters5 col mb-1" ></div>
+									<div class="scrolling menu" id="categoryList">
+									<div class="item" style="display:none" ></div>
+
+									</div>
+								  </div>
+								</div>
+								<input type="hidden" id="activeCategories" />
+							  </th>
+                              <th>
+								  Amount
+								  <span class="sort-icon">&nbsp;&nbsp;</span>
+								  <div class="ui top right pointing dropdown icon button filter ml-1">
+									  <i class="filter icon"></i>
+									  <span class="notify-icon"></span>
+									  <div class="menu"  style="right: 0;left: auto;">
+										<div class="header">
+										  <i class="tags icon"></i>
+										  Filter by Amount
+										</div>
+										<div class="item" style="display: none;">
+										</div>
+										<div class="pl-0 d-md-flex">
+										</div>
+									  </div>
+									  </div>
+							  </th>
+							  <th>Top Category<span class="sort-icon">&nbsp;&nbsp;</span></th>
+							  <th>Category<span class="sort-icon">&nbsp;&nbsp;</span></th>
+							  <th>Account ID<span class="sort-icon">&nbsp;&nbsp;</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+/* Tables */
+
+.table {
+  margin-bottom: 0;
+  thead {
+    th {
+      border-bottom-width: 1px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 0;
+      i {
+        margin-left: 0.325rem;
+      }
+    }
+  }
+  th,
+  td {
+    vertical-align: middle;
+    line-height: 1;
+  }
+  td {
+    font-size: $default-font-size;
+    padding: 1.874rem 0.9375rem;
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+    }
+    .badge {
+      margin-bottom: 0;
+    }
+  }
+  &.table-borderless {
+    border: none;
+    tr,
+    td {
+      border: none;
+    }
+    thead{
+      th { 
+        border-bottom: 1px solid $border-color;
+        font-weight: bold;
+        padding: 0.925rem 0.9375rem;
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 1.6rem 0.9375rem;
+          font-size: 1rem;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}

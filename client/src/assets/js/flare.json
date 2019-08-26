@@ -1,0 +1,45 @@
+{
+  "name": "graph",
+  "children": [
+    {
+        "name": "Merchant A",
+        "size": 500,
+        "fill": "#DEFC22"
+      },
+      {
+        "name": "Merchant D",
+        "size": 700,
+        "fill": "#DE87fb"
+      },
+      {
+        "name": "Merchant C",
+        "size": 1500,
+        "fill": "#DE2135"
+      },
+      {
+        "name": "Merchant E",
+        "size": 1700,
+        "fill": "#EB2135"
+      },
+      {
+        "name": "Merchant B",
+        "size": 600,
+        "fill": "#5CC7fb"
+      },
+      {
+        "name": "Merchant G",
+        "size": 750,
+        "fill": "#5AA7fb"
+      },
+      {
+        "name": "Merchnat E",
+        "size": 2500,
+        "fill": "#98cc4a"
+      },
+      {
+        "name": "Merchnat A",
+        "size": 2000,
+        "fill": "#982133"
+      }
+  ]
+}

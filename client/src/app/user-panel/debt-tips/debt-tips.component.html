@@ -1,0 +1,396 @@
+<div class="row">
+  <div class="col-md-12 grid-margin">
+      <div class="card">
+          <div class="card-body">
+              <h2 class="py-4">Debt Paydown Tools</h2>
+              <div class="d-md-flex align-items-center justify-content-between">
+                    <div class="tips-box text-center mr-4 btn"  (click)="suggestions=false;calculator=true;chipaway=false;product_suggestions=false;scrollView(0)">
+                          <div class="icon">
+                            <img src="assets/images/hand.png"  class="color"  />
+                            <img src="assets/images/hand_white.png"  class="white" />
+                            <p>Debt Paydown Calculator</p>
+                          </div>
+                    </div>
+                    <div class="tips-box  text-center mx-4 btn"   (click)="suggestions=false;calculator=false;chipaway=true;product_suggestions=false;showq=false;scrollView(1)">
+                        <div class="icon">
+                        <img src="assets/images/money.png" class="color" />
+                          <img src="assets/images/money_white.png" class="white" />
+                          <p>Chip away at your debt</p>
+                        </div>
+                    </div>
+                    <div class="tips-box  text-center ml-4 btn"   (click)="suggestions=true;calculator=false;chipaway=false;product_suggestions=false;scrollView(2)">
+                        <div class="icon">
+                          <img src="assets/images/list.png" class="color"  />
+                          <img src="assets/images/list_white.png" class="white" />
+                          <p>Product Suggestions</p>
+                        </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div id="debt-calculator-section" class="sectionRotate" >
+
+    <div class="row debt-calculator">
+      <h2 class="p-4">Payment Amount</h2>
+      <div class="col-md-12 grid-margin">
+          <div class="card">
+              <div class="card-body p-5 d-flex">
+                    <p class="debt-text pr-4 py-2">Select Debt</p>
+                    <div>
+                        <div class="dropdown">
+                            <button type="button" id="pCategories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-xs btn-white dropdown-toggle droptext colored-btn auto-wide-btn px-2 py-2 debt-text">
+                              Credit Card
+                            </button>
+                            <div class="dropdown-menu recent-transactions-dd" aria-labelledby="pCategories" style="max-height:300px;overflow:auto;">
+                              <a class="dropdown-item"> Credit Card</a>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row debt-calculator">
+      <div class="col-md-12 grid-margin">
+          <div class="d-md-flex align-items-center justify-content-between">
+                <div class="selection-box text-center mr-3  p-0">
+                      <p class="text">APR<sup><img src="assets/images/question.png"  class="color"  /></sup></p>
+                      <small>&nbsp;</small>
+                      <p class="amount pt-5">17.9%</p>
+                </div>
+                <div class="selection-box  mx-3 p-0">
+                  <p class="text">Interest Paid</p>
+                      <small>Last 6 Months</small>
+                    <p class="amount pt-5">$343</p>
+                </div>
+                <div class="selection-box mx-3  p-0">
+                      <p class="text">Current Balance</p>
+                      <small>&nbsp;</small>
+                      <p class="amount  pt-5">$2,343</p>
+                </div>
+                <div class="selection-box ml-3  p-0">
+                  <p class="text">Next Payment Due Date</p>
+                  <small>&nbsp;</small>
+                  <p class="amount  pt-5">4/28</p>
+                </div>
+          </div>
+      </div>
+    </div>
+    <div class="row mt-4 debt-calculator">
+      <div class="col-md-4 grid-margin">
+
+      <div class="card h-100 left-card" style="">
+        <div class="page-title mt-5 px-4">
+            <h2 class=""><img src="assets/images/payment-method.png" class="white img-payment pl-1 pr-2" /><span class="title">My Monthly Payment</span></h2>
+        </div>
+        <div class="card-body text-left">
+                <div class="mb-5 text-center">
+                      <div class="mt-1 mb-5 px-4">
+                        <div id="monthlyslider" class="slider-primary mb-5"></div>
+                      </div>
+                </div>
+                <div class="mt-5 pt-5">
+                    <div class="buttonbox mt-4">
+                      <div class="buttonbox-bg d-flex justify-content-between">
+                        <div class="text">Total Interest</div>
+                        <div class="value">$300</div>
+                      </div>
+                    </div>
+                    <div class="buttonbox  mt-4">
+                      <div class="buttonbox-bg d-flex justify-content-between">
+                        <div class="text">Time to Payoff</div>
+                        <div class="value">12 Months</div>
+                      </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 grid-margin spending-ratio-section">
+          <div class="card right-card">
+              <div class="page-title mt-5 px-4">
+                  <h2 class=""><img src="assets/images/payment-method.png" class="white img-payment pl-1 pr-2" /><span class="title">Approximate Paydown Schedule</span></h2>
+              </div>
+              <div class="card-body text-left">
+                    <div class="mt-3">
+                        <div class="legends text-center w-100">
+                          <button class="btn btn-sm btn-primary mx-3 interestButton" type="button">Interest</button>
+                          <button class="btn btn-sm btn-primary mx-3 principalButton" type="button">Principal</button>
+                        </div>
+                        <div id="paydownContainer" style="height:500px;width:100%;"></div>
+                    </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div id="chip-away-section"  class="sectionRotate" >
+  <div class="row chip-away">
+        <h2 class="p-4">Set aside a chunk of change</h2>
+        <div class="col-md-12 grid-margin">
+            <div class="card">
+                <div class="card-body p-5 d-flex">
+                      <div><img src="assets/images/dollar.png" class="white" /></div>
+                      <div class="ml-4">
+                          <h3 class="chip-title">About Us</h3>
+                          <p class="chip-text py-2">Chunk can help you make payments on your dept. Automatically set aside a percentage of your spend of provide a fixed amount and we will apply these payment directly to your debts. </p>
+                          <p class="chip-text py-3">Please fill out the following <span class="questions btn sitecolor p-0" (click)="questionView()" >questions</span> to enroll.</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+  </div>
+
+  <div class="row chip-away">
+        <h2 class="p-4">Set aside a chunk of change</h2>
+        <!-- Info Section -->
+        <div class="col-md-12 grid-margin">
+            <div class="card">
+                <div class="card-body p-5 d-flex">
+                      <div><img src="assets/images/dollar.png" class="white" /></div>
+                      <div class="ml-4">
+                          <h3 class="chip-title">Chunk can help automate payments on your debt <i class="fa fa-info-circle chip-info"></i></h3>
+                          <p class="chip-text py-2">By automating paydowns toward your debt, <a class="sitecolor">Chunk</a> can help you climb out of debt faster and minimize your long-term interest costs. Just let us know what method you prefer to pay down your debt, and how much you would like to set aside.  </p>
+                          <p class="chip-text py-3">To take advantage of this feature, fill out the form found here. </p>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- Selection of Method Section -->
+        <div class="col-md-12 grid-margin">
+            <div class="card">
+                <form class="chip-form">
+
+                    <!-- Step 1 -->
+                    <div class="card-body p-5" [hidden]="percentage!=0">
+                          <div class="text-center py-4"><h2  class="font-weight-normal"><img src="assets/images/debit-card.png" class="white px-3" />Choose a method</h2></div>
+                          <div class="mx-4 d-md-flex justify-content-between">
+                              <div class="method-box mt-4" [class.active]="method === 'round'" (click)="method='round';">
+                                  <h3 class="pt-5 py-4 text-center font-weight-normal">Round up Spending</h3>
+                                  <hr/>
+                                  <p class="p-4">
+                                      Amount rounded up will be applied to your debt of choice
+                                  </p>
+                                  <img src="assets/images/oval-percentage.png" class="white" />
+                              </div>
+                              <div class="method-box mt-4" [class.active]="method === 'percentage'" (click)="method='percentage';">
+                                  <h3 class="pt-5 py-4 text-center font-weight-normal">Percentage of Spend</h3>
+                                  <hr/>
+                                  <p class="p-4">
+                                    Keep yourself honest by committing a percentage of your monthly spend to pay down your debt
+                                  </p>
+                                  <img src="assets/images/oval-percentage.png" class="white" />
+                              </div>
+                              <div class="method-box mt-4"  [class.active]="method === 'fixed'" (click)="method='fixed';">
+                                  <h3 class="pt-5 py-4 text-center font-weight-normal">Fixed Amount</h3>
+                                  <hr/>
+                                  <p class="p-4">
+                                    If you have a specific figure in mind, we can set a recurring transfer in that amount toward your debt.
+                                  </p>
+                                  <img src="assets/images/oval-dollar.png" class="white" />
+                              </div>
+                          </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="card-body p-5" [hidden]="percentage!=20">
+                        <div class="text-center py-4"><h2 class="font-weight-normal"><img src="assets/images/dollar.png" class="white pr-3" />Choose a fixed amount</h2></div>
+                        <div class="mx-4 my-4 justify-content-between">
+                            <h3  class="text-center font-weight-normal py-4">How much would you like to set aside?</h3>
+                            <div class="mx-4 d-flex text-center w-100">
+                              <div class="spinner px-4 d-flex m-auto justify-content-between">
+                                  <div class="minus btn" (click)="amount-1 > 1 ? amount = amount-1 : amount = 0 ">-</div>
+                                  <span class="currencyinput">$<input type="number"  class="spinner-input" name="amount" [(ngModel)]="amount"  /></span>
+                                  <div class="plus btn"  (click)="amount+1 < 99999 ? amount = amount+1 : amount = 99999">+</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <h5 class="text-danger text-center" *ngIf="errorMsg">{{errorMsg}}</h5>
+                <div class="card-body p-5">
+                      <div class="mx-4 mt-4">
+                        <h6 class="complete-text small">Your Progress</h6>
+                        <h3 class="complete-text">{{percentage}}% to complete</h3>
+                        <div class="progressbar mt-4">
+                          <div class="percentage" [ngStyle]="{ 'background': 'linear-gradient(to right, #0183D9 '+percentage+'%, #63c0fd69 0%)' }" [style.background]="">
+                            <div class="d-flex justify-content-between">
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                              <div class="circle"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-5 d-flex justify-content-between">
+                          <div class="backBtn btn pt-3 pl-0" (click)="backchip()" ><img src="assets/images/left-arrow.png" class="white pr-3" />Back</div>
+                          <button type="button" class="nextBtn btn" (click)="nextchip()" >Next <img src="assets/images/right-arrow.png" class="white pl-3" /></button>
+
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+  </div>
+</div>
+
+
+<div id="suggestions-section"  class="sectionRotate" >
+  <div class="row debt-calculator">
+      <div class="col-md-12 grid-margin">
+          <div class="card">
+              <div class="card-body p-5">
+				<div class="row page-title mt-0 mb-5">
+					<h2 class=""><img src="assets/images/credit-card-2.png" class="white img-payment pl-1 pr-2" /><span class="title">What is your approximate credit score?</span></h2>
+				</div>
+				<div class="row mt-2 mb-4">
+					<button class="btn colored-btn2 mr-3" (click)="suggestionView(0)"><span class="textCircle">A</span>&nbsp;&nbsp;&nbsp;Poor (<500)</button>
+					<button class="btn colored-btn2 mr-3" (click)="suggestionView(1)" ><span class="textCircle">B</span>&nbsp;&nbsp;&nbsp;Average (500 - 600)</button>
+					<button class="btn colored-btn2 mr-3" (click)="suggestionView(2)" ><span class="textCircle">C</span>&nbsp;&nbsp;&nbsp;Good (600 - 700)</button>
+					<button class="btn colored-btn2 mr-3" (click)="suggestionView(3)" ><span class="textCircle">D</span>&nbsp;&nbsp;&nbsp;Excellent (700+)</button>
+				</div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div id="products-section"  class="" >
+  <div class="row debt-calculator">
+      <h2 class="p-4">Product Suggestions</h2>
+      <div class="col-md-12 grid-margin">
+          <div class="card">
+              <div class="card-body p-5">
+				<div class="row page-title">
+					<h2 class=""><img src="assets/images/credit-card-3.png" class="white img-payment pl-1 pr-2" /><span class="title">Our Picks</span></h2>
+				</div>
+				<div class="row mt-2 ml-4 pl-3">
+					Our algorithm has analyzed your answers and financial data to curate the following recommended products
+				</div>
+				<div class="row px-4 mt-4">
+				  <div class=" col-md-3 text-center">
+					<div class="row tab-tile mx-1 my-3 py-4">
+						<div class="col-sm-12">
+							<img src="assets/images/fake-card(1).png" style="width: 100%;" />
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Interest rate</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">14%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Balance Transfer Fee</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">0%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Potential savings in interest costs</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">$1,235</button>
+						</div>
+						<div class="col-md-12 mt-4">
+							<input type="button" class="btn sugg-btn" value="APPLY HERE" />
+						</div>
+					</div>
+				  </div>
+				  <div class=" col-md-3 text-center">
+					<div class="row tab-tile mx-1 my-3 py-4">
+						<div class="col-sm-12">
+							<img src="assets/images/fake-card(2).png" style="width: 100%;" />
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Interest rate</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">14%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Balance Transfer Fee</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">0%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Potential savings in interest costs</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">$1,235</button>
+						</div>
+						<div class="col-md-12 mt-4">
+							<input type="button" class="btn sugg-btn" value="APPLY HERE" />
+						</div>
+					</div>
+				  </div>
+				  <div class=" col-md-3 text-center">
+					<div class="row tab-tile mx-1 my-3 py-4">
+						<div class="col-sm-12">
+							<img src="assets/images/fake-card(3).png" style="width: 100%;" />
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Interest rate</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">14%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Balance Transfer Fee</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">0%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Potential savings in interest costs</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">$1,235</button>
+						</div>
+						<div class="col-md-12 mt-4">
+							<input type="button" class="btn sugg-btn" value="APPLY HERE" />
+						</div>
+					</div>
+				  </div>
+				  <div class=" col-md-3 text-center">
+					<div class="row tab-tile mx-1 my-3 py-4">
+						<div class="col-sm-12">
+							<img src="assets/images/fake-card(4).png" style="width: 100%;" />
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Interest rate</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">14%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Balance Transfer Fee</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">0%</button>
+						</div>
+						<div class="col-sm-7 mt-4">
+							<button class="btn sugg-label p-0">Potential savings in interest costs</button>
+						</div>
+						<div class="col-sm-5 mt-4 text-right">
+							<button class="btn sugg-value">$1,235</button>
+						</div>
+						<div class="col-md-12 mt-4">
+							<input type="button" class="btn sugg-btn" value="APPLY HERE" />
+						</div>
+					</div>
+				  </div>
+			   </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>

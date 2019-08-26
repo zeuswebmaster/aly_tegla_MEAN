@@ -1,0 +1,41 @@
+.accountsHtml .card{
+	border: 0;
+}
+.accountsHtml .card-body{
+	padding: 0;
+}
+.accountsHtml table {
+    border-collapse: collapse !important;
+}
+.accountsHtml .table thead{
+}
+.accountsHtml .table th{
+	padding: 1.5rem 0.9375rem;
+	font-size: 13px;
+	font-weight: 700;
+	border-bottom: 1px solid #f7f5f5;
+}
+:host ::ng-deep .accountsHtml .table td{
+	font-size: 14px;
+	border-top: 0;
+	padding: 1rem 0.9375rem;
+	color: #797e90;
+    vertical-align: middle;
+}
+.accountsHtml .table tr th:first-child,:host ::ng-deep .accountsHtml .table tr td:first-child{
+	padding-left: 3rem;
+}
+:host ::ng-deep  .accountsHtml .table td span{
+    display: inline-block;
+    vertical-align: sub;
+}
+.link-button{
+	border-radius: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    float: right;
+}

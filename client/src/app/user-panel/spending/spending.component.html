@@ -1,0 +1,364 @@
+<div class="row pl-5">
+  <div class="col-md-12 page-title">
+    <h2 class="font-weight-normal">Spending</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body spending-section">
+        <!--<div class="d-md-flex align-items-start justify-content-between">
+            <h3 class="card-title col-md-3 p-0 mt-2">Spending</h3>
+        </div>-->
+		<div class="d-md-flex align-items-start justify-content-between">
+			<!--<div class="col-md-4">
+				<h1 *ngIf="sectionFirst" [innerHTML]="'$'+sectionFirst"></h1>
+				<h3>Total</h3>
+			</div>-->
+			<div class="col-md-12 d-md-flex align-items-start pl-3">
+				<div class="text-left amtRange p-0" data-section="1">
+				  <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Transaction size</p>
+				  <input type="button" class="btn btn-xs colored-btn ml-1 mr-2 px-1 py-2 active" value="$0-$50" data-min="0" data-max="50"/>
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$50-$200" data-min="50" data-max="200" />
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$200-$500"  data-min="200" data-max="500"/>
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$500-$1,000" data-min="500" data-max="1000" />
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$1,000+"  data-min="1000" data-max="99999999"/>
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2 mr-2" value="All" style=""  data-min="0" data-max="99999999"/>
+				</div>
+				<div class="text-left duration p-0 ml-0 ml-md-5">
+				  <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Time Range</p>
+				  <input type="button" class="btn btn-xs colored-btn ml-1 mr-2 px-1 py-2 small-wide-btn  active" data-duration="1" value="1 month" (click)="categorizedSpending(1)" />
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2 small-wide-btn" data-duration="3" value="3 month" (click)="categorizedSpending(3)" />
+				  <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2 small-wide-btn" data-duration="6" value="6 month" (click)="categorizedSpending(6)" />
+				</div>
+			</div>
+		</div>
+		<div class=" mt-5">
+		</div>
+		<div class=" py-2 pl-3">
+			<h5><small class="mr-1">Total :</small> <span *ngIf="sectionFirst" [innerHTML]="'$'+sectionFirst"></span></h5>
+		</div>
+        <div class="d-md-flex align-items-start justify-content-between no-margin-first mt-1 pl-3 pb-4">
+
+		  <div class="col p-0 border ml-3 spending-tile" *ngFor="let s of spendingSections;">
+            <div class="d-flex align-items-start justify-content-between bg-white mt-2"  >
+              <div class="pl-2 pt-1">
+                  <h5 [innerHTML]="'<small>$'+s.value+'</small>'"></h5>
+                  <h6 [innerHTML]="'<small>'+s.percent+'%</small>'" title="% of total spending"></h6>
+              </div>
+			  <!--<svg width="0" height="0">
+				  <radialGradient id="rg" r="100%" cx="30%" cy="0%">
+					<stop stop-color="#2BD9AE" offset="0" />
+					<stop stop-color="#65BEFD" offset="1" />
+				  </radialGradient>
+				</svg>-->
+              <div class="pr-2 pt-1 text-gray icon-div">
+                  <!-- <h4 style="color: #63c0fd;" class="fa fa-{{ s.img }} mt-1  ml-0 icon-gradient"></h4> -->
+				  <img src="assets/images/{{ s.img_path }}.png" />
+              </div>
+            </div>
+            <div class="d-flex align-items-start justify-content-between text-white px-2 py-1" [style.background]="s.color">
+              <p class="mb-0">{{ s.name }}</p>
+              <a (click)="spendingTransArr=s.transactions;renderPopUp(s.name)"  data-toggle="modal" data-target="#spendingModal" ><i class="pull-right list-icon fa fa-list"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row pl-5">
+  <div class="col-md-12 page-title mt-5">
+    <h2 class="font-weight-normal">Spending Detail</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body spending-detail-section">
+            <div class="d-md-flex align-items-start justify-content-between">
+                <div class="col-md-12 pl-4 d-md-flex align-items-start">
+                  <div class="text-left amtRange p-0 d-md-flex" >
+                    <div class="mr-4">
+                      <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Category</p>
+                      <div class="dropdown">
+                        <button type="button" id="bCategories" data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle droptext colored-btn auto-wide-btn px-2 py-2">
+                        All
+                        </button>
+                        <div class="dropdown-menu recent-transactions-dd" aria-labelledby="bCategories" style="max-height:300px;overflow:auto;">
+                        <a class="dropdown-item" (click)="ddlbCategory('')">All</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Bars')">Bars</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Checks')">Checks</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Entertainment')">Entertainment</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Gas Stations')">Gas Stations</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Healthcare')">Healthcare</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Home & Auto')">Home & Auto</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Hotels & Lodging')">Hotels & Lodging</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Insurance')">Insurance</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Loan and Bank Fees')">Loan and Bank Fees</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Others')">Others</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Personal Care')">Personal Care</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Petcare')">Pet Care</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Restaurants')">Restaurants</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('School')">School</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Shopping')">Shopping</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('Transportation')">Transportation</a>
+                        <a class="dropdown-item" (click)="ddlbCategory('TV, Phone & Internet')">TV, Phone & Internet</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mr-4" data-section="2">
+                      <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Transaction size</p>
+                      <input type="button" class="btn colored-btn btn-xs ml-1 mr-2 px-1 py-2  active" value="$0-$50" data-min="0" data-max="50"/>
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 " value="$50-$200" data-min="50" data-max="200" />
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 " value="$200-$500"  data-min="200" data-max="500"/>
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 " value="$500-$1,000" data-min="500" data-max="1000" />
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 " value="$1,000+"  data-min="1000" data-max="99999999"/>
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 " value="All" style=""  data-min="0" data-max="99999999"/>
+                    </div>
+                    <div class=" duration">
+                      <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Time Range</p>
+                      <input type="button" class="btn colored-btn btn-xs ml-1  mr-2 px-1 py-2 small-wide-btn active" data-duration="1" value="1 month" (click)="topMerchants(1)" />
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 small-wide-btn" data-duration="3" value="3 month" (click)="topMerchants(3)" />
+                      <input type="button" class="btn colored-btn btn-xs mr-2 px-1 py-2 small-wide-btn" data-duration="6" value="6 month" (click)="topMerchants(6)" />
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+			<div class="mt-4 pt-5 text-center col-md-12  p-0" id="spending-detail-legends">
+            </div>
+            <div class="mt-5" id="biggest-spending">
+                <div id="spendingDetailContainer" style="height:600px;width:100%;"></div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row pl-5">
+  <div class="col-md-12 page-title mt-5">
+    <h2 class="font-weight-normal">Spending Breakout</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body spending-breakout-section">
+          <div class="d-md-flex align-items-start justify-content-between">
+              <div class="col-md-12 text-left amtRange p-0 ml-3" data-section="3">
+                <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Transaction size</p>
+                <input type="button" class="btn btn-xs colored-btn ml-1 mr-2 px-1 py-2 active" value="$0-$50" data-min="0" data-max="50"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$50-$200" data-min="50" data-max="200" />
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$200-$500"  data-min="200" data-max="500"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$500-$1,000" data-min="500" data-max="1000" />
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$1,000+"  data-min="1000" data-max="99999999"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="All" style="" data-min="0" data-max="99999999"/>
+              </div>
+          </div>
+		  <div class="col-md-12 mt-5 px-0 text-center min-height-22">
+          <span id="spending-breakout-month"></span>
+		  </div>
+        <div class="col-md-12 mt-2 p-0 text-center min-height-70">
+            <span  *ngFor="let s of currentPoint" >
+             <button class="legend-btn px-0 py-1 m-1 spending-breakout-legend" disabled  *ngIf="s.amount!= '$0<sup>.00</sup>'"><span class="spending-breakout-legend-left">{{ s.name }}</span><span class="spending-breakout-legend-right" [innerHTML]="s.amount"  [style.background]="s.color"></span></button>
+            </span>
+		  </div>
+          <div class="mt-3">
+              <div id="breakOutContainer" style="height:500px;width:100%;"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row pl-5">
+  <div class="col-md-12 page-title mt-5">
+    <h2 class="font-weight-normal">Spending Breakout2</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body spending-breakout-section2">
+          <div class="d-md-flex align-items-start justify-content-between">
+              <div class="col-md-12 text-left amtRange p-0 ml-3" data-section="5">
+                <p class="text-left m-0 p-0 ml-1 mb-3 font-weight-normal">Transaction size</p>
+                <input type="button" class="btn btn-xs colored-btn ml-1 mr-2 px-1 py-2 active" value="$0-$50" data-min="0" data-max="50"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$50-$200" data-min="50" data-max="200" />
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$200-$500"  data-min="200" data-max="500"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$500-$1,000" data-min="500" data-max="1000" />
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="$1,000+"  data-min="1000" data-max="99999999"/>
+                <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2" value="All" style="" data-min="0" data-max="99999999"/>
+              </div>
+          </div>
+		  <div class="col-md-12 mt-5 px-0 text-center min-height-22">
+          <span id="spending-breakout-month"></span>
+		  </div>
+        <!-- <div class="col-md-12 mt-2 p-0 text-center min-height-70">
+            <span  *ngFor="let s of currentPoint" >
+             <button class="legend-btn px-0 py-1 m-1 spending-breakout-legend" disabled  *ngIf="s.amount!= '$0<sup>.00</sup>'"><span class="spending-breakout-legend-left">{{ s.name }}</span><span class="spending-breakout-legend-right" [innerHTML]="s.amount"  [style.background]="s.color"></span></button>
+            </span>
+		  </div> -->
+          <div class="mt-3">
+              <div id="breakOutContainer2" style="height:500px;width:100%;"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row mt-4">
+  <div class="col-md-4 grid-margin spending-ratio-section">
+
+	<div class="card h-100 left-card" style="">
+      <div class="page-title mt-5 pl-5">
+		<h2 class="">Spending</h2>
+        <h4 class="font-weight-normal text-dark">as a % of money inflows</h4>
+	  </div>
+	  <div class="card-body spending-breakout-section3 text-left">
+          <div class="my-4 text-center duration">
+              <input type="button" class="btn btn-xs colored-btn mr-2 px-1 py-2 ratio" *ngFor="let t of lastsixmonths"  (click)="spendingRatio(t.index)" [attr.value]="t.curMonth"   />
+          </div>
+
+          <div class="my-5 text-center" *ngIf="ratioData">
+
+			<a (click)="spendingTransArr=ratioData.spendArr;renderPopUp('Spending')" data-toggle="modal" data-target="#spendingModal" >
+				<button class="legend-btn px-0 py-2 spending-breakout-legend2" style=" cursor: pointer; opacity: 1 !important;"><span class="spending-breakout-legend2-left">Total Spending:</span><span class="spending-breakout-legend2-right text-white" [innerHTML]="'$'+ratioData.spending"  style="background: #63c0fd;"></span></button>
+				<!--<div class="d-md-flex align-items-start justify-content-between my-2 pt-2 pl-3 hover-effect">
+                  <h4 class="font-weight-normal">Total Spending: $<span [innerHTML]="ratioData.spending"></span></h4>
+                </div>-->
+			</a>
+			<br/>
+			<br/>
+			  <a (click)="spendingTransArr=ratioData.incomeArr;renderPopUp('Income')" data-toggle="modal" data-target="#spendingModal" >
+				<button class="legend-btn px-0 py-2 spending-breakout-legend2" style=" cursor: pointer;opacity: 1 !important;"><span class="spending-breakout-legend2-left">Money Inflows:&nbsp;</span><span class="spending-breakout-legend2-right text-white" [innerHTML]="'$'+ratioData.income"  style="background: #63c0fd;"></span></button>
+
+			  </a>
+          </div>
+          <div class="col-md-12 container text-center" >
+              <div id="spendingRatioCircle" class="progressbar-js-circle p-3"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 grid-margin spending-ratio-section">
+
+    <div class="card right-card">
+		<div class="page-title mt-5">
+			<h2  class="">Recent Transactions</h2>
+			<p class="text-muted">&nbsp;</p>
+		</div>
+      <div class="card-body spending-breakout-section4 text-left">
+           <div class="dropdown">
+                  <button type="button" id="tCategories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-xs btn-white dropdown-toggle droptext colored-btn auto-wide-btn px-2 py-2">
+                    All
+                  </button>
+                  <div class="dropdown-menu recent-transactions-dd" aria-labelledby="tCategories" style="max-height:300px;overflow:auto;">
+                    <a class="dropdown-item" (click)="ddlCategory('')">All</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Checks')">Checks</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Gas Stations')">Gas Stations</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Entertainment')">Entertainment</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Restaurants')">Restaurants</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Healthcare')">Healthcare</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Home & Auto')">Home & Auto</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Bars')">Bars</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Insurance')">Insurance</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Loan and Bank Fees')">Loan and Bank Fees</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Others')">Others</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Personal Care')">Personal Care</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Petcare')">Pet Care</a>
+                    <a class="dropdown-item" (click)="ddlCategory('School')">School</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Shopping')">Shopping</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Hotels & Lodging')">Hotels & Lodging</a>
+                    <a class="dropdown-item" (click)="ddlCategory('Transportation')">Transportation</a>
+                    <a class="dropdown-item" (click)="ddlCategory('TV, Phone & Internet')">TV, Phone & Internet</a>
+                  </div>
+              </div>
+          <div class="table-responsive recent-transactions">
+                <table class="table mt-4">
+                  <tbody *ngIf="topTransactions?.length > 0">
+                    <tr class="table-tr" *ngFor="let t of topTransactions" (click)="singleTransactionLoad(t.transId)" >
+                      <td class="border-top-0 px-0" style="width: 50px; height: 80px;">
+                        <img class="" style="border-radius:0!important; width: 24px; height: unset;" [src]="'assets/images/'+t.img" border="0">
+                      </td>
+                      <td class="border-top-0">
+                        <span class="" [innerHTML]="t.payee_details"></span>
+						<!-- <br/> -->
+						<!-- <span style="color:#9b9b9b; font-size: 14px;">{{ t.category }}</span> -->
+                      </td>
+                      <td class="border-top-0">
+                       {{t.month+" "+t.date}}
+                      </td>
+                      <td class="border-top-0" [innerHTML]="'$'+t.amount+''">
+                      </td>
+                    </tr>
+
+                  </tbody>
+
+                </table>
+				<div class="my-5" *ngIf="topTransactions?.length <= 0 && loading">
+						<h4 class="text-center">Loading...</h4>
+				</div>
+				<div class="my-5" *ngIf="topTransactions?.length <= 0 && !loading">
+						<h4 class="text-center">No transactions in last 30 days.</h4>
+				</div>
+          </div>
+          <div class="col-md-12 my-2">
+                <i class="fa fa-info-circle text-dark" style="color: #63c0fd !important;"></i>&nbsp;
+                <i>For more detailed transaction data, go to the
+                <a href="transactions">transactions</a>
+                page.</i>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="spendingModal"  role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+		  <!-- Modal body -->
+          <div class="modal-body mb-1">
+			<div class="d-flex pt-3 mx-5">
+				<h3 class="modal-title col-md-11 float-left pl-0 font-weight-normal"></h3>
+				<div class="col-md-1 float-right text-right p-0">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+			</div>
+            <table class="table table-responsive-xs table-responsive-sm" id="transactionsPopTable" style="width: 100%">
+              <thead>
+                <tr style="background: rgba(250,250,250);">
+                  <th>
+                    Date<span class="sort-icon">&nbsp;&nbsp;</span>
+                  </th>
+                  <th>
+                    Merchant<span class="sort-icon">&nbsp;&nbsp;</span>
+                  </th>
+                  <th>
+                    Category<span class="sort-icon">&nbsp;&nbsp;</span>
+                  </th>
+                  <th>
+                    Amount<span class="sort-icon">&nbsp;&nbsp;</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+          </table>
+          </div>
+
+          <!-- Modal footer -->
+		<!--<div class="modal-footer">
+            <button type="button" class="btn-xs btn-danger" data-dismiss="modal">Close</button>
+          </div>-->
+
+    </div>
+</div>
+

@@ -1,0 +1,944 @@
+/****************dashboard.component.css********************/
+
+.icon-img{
+  padding:0;
+}
+.savings-tile a.active, .savings-tile a:hover{
+	color: #fff !important;
+}
+.savings-tile a{
+	color: #007bff !important;
+  cursor:pointer;
+}
+.height-230{
+  height:230px;
+}
+.spending-tile h3, .spending-week-date-range, .spending-tile a.active,.spending-tile a:hover{
+	/* color: rgb(239,88,103) !important; */
+}
+.spending-tile a.active, .spending-tile a:hover{
+	color: #fff !important;
+}
+.spending-tile a{
+	color: #007bff !important;
+  cursor:pointer;
+}
+
+.investing-tile h3, .investing-week-date-range, .investing-tile a.active,.investing-tile a:hover{
+	/* color: rgb(255,187,51) !important; */
+}
+.investing-tile a.active, .investing-tile a:hover{
+	color: #fff !important;
+}
+.investing-tile a{
+	color: #007bff !important;
+  cursor:pointer;
+}
+.welcome-section{
+	background: linear-gradient(287.56deg, #2BD9AE 1.75%, #65BEFD 73.74%);
+	box-shadow: 0px 4px 10px rgba(99, 192, 253, 0.15);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: #fff;
+}
+.welcome-section img{
+  vertical-align: bottom;
+  box-shadow: none;
+  border: none;
+  width: 155px;
+}
+.welcome-section .text-section{
+	padding: 20px;
+}
+.welcome-section .text-section h4{
+	color: #fff;
+}
+.welcome-section .text-section h5{
+	color: #fff;
+}
+.welcome-section .points-section{
+	background: #00459f;
+	border-radius: 10px;
+	text-align: center;
+  padding: 22px;
+}
+.welcome-section .points-section h2{
+	color: #ffe801;
+	font-size: 60px;
+}
+.welcome-section .points-section h6{
+	color: #ffe801;
+    font-size: 24px;
+}
+.welcome-section .points-section a{
+	color: #fff;
+  font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+}
+
+.welcome-text span{
+	color: #63C0FD;
+}
+.money-duration .dropdown-item:active{
+  color:#000;
+}
+.chart-section .stretch-card, .card.investing-tile, .card.golden-nugget{
+	height: 420px;
+}
+.g_chart{
+  width:250px;
+	float: left;
+  margin: 0 auto !important;
+  padding-top:60px !important;
+  padding-top:20px;
+}
+.inflow_legends{
+	float: left;
+}
+.inflow_btns{
+  z-index:+1;
+  padding-top:50px;
+}
+.inflow_legends ul li{
+  line-height:1.1;
+}
+#inflow_chart{
+  height: 500px;
+  overflow: hidden;
+  float:left;
+}
+.chart_container.money_inflow_quarters{
+  width:650px;
+  margin-top: -50px !important;
+
+}
+.directAmount:before {
+	content: '';
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   -moz-border-radius: 7.5px;
+   -webkit-border-radius: 7.5px;
+   border-radius: 7.5px;
+   background-color: #69b6d5;
+}
+
+:host ::ng-deep .text-muted{
+  text-transform:capitalize;
+}
+/* Triangle hack to make tooltip look like a speech bubble */
+
+:host ::ng-deep div.google-visualization-tooltip:before {
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  width: 0;
+  border-bottom: 5px solid #000;
+  border-bottom: 5px solid hsla(0, 0%, 30%, 1);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+:host ::ng-deep div.google-visualization-tooltip{
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding: 7px;
+  width: 130px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 30%, 1);
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+:host ::ng-deep .google-visualization-tooltip-item-list .google-visualization-tooltip-item:first-child{
+  padding:0;
+  margin:0;
+  text-align:center;
+}
+:host ::ng-deep .google-visualization-tooltip-item-list,.google-visualization-tooltip-item-list .google-visualization-tooltip-item:first-child{
+  padding:0 !important;
+  margin:0 !important;
+  text-align:center;
+}
+:host ::ng-deep .google-visualization-tooltip-item{
+ text-align:center;
+ padding:0 !important;
+  margin:0 !important;
+}
+:host ::ng-deep .google-visualization-tooltip-item span{
+  text-align:center !important;
+  color:#fff !important;
+  font-size:10px !important;
+}
+@media (max-width: 768px) {
+
+  .g_chart{
+		width: 100% !important;
+	}
+	.inflow_legends{
+		float: left;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+.g_chart-overlay {
+    display:block;
+    width:250px;
+    height:250px;
+    text-align:center;
+    vertical-align: middle;
+    position: absolute;
+    top: 450px;
+    left: 55px;
+    font-size: 1rem;
+}
+:host ::ng-deep #chartjs-tooltip{
+	pointer-events: unset !important; cursor: pointer;
+}
+:host ::ng-deep #chartjs-tooltip.custom-tooltip span:after{
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f00;
+}
+/*
+#overviewModal{
+  overflow:hidden;
+}
+#overviewModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #overviewModal .modal-body{
+  overflow-y:auto;
+  max-height:470px;
+}
+*/
+/*
+:host ::ng-deep #spendingModal .modal-body:before{
+  padding: 2px 5px;
+  content: "Please scroll to view more.";
+  color: #fff;
+  background: #ccc;
+}
+*/
+/*
+:host ::ng-deep #overviewModal.modal .table td{
+	font-size: 12px !important;
+	padding: 10px 12px !important;
+}
+:host ::ng-deep #overviewModal.modal .table tr:hover{
+	background:#eee;
+  cursor:pointer;
+}
+:host ::ng-deep #overviewModal.modal .table th{
+	font-size: 13px !important;
+	padding: 4px 20px !important;
+}
+@media(min-width:992px){
+  #overviewModal .modal-dialog{
+    max-width: 800px !important;
+  }
+}
+#overviewModal .modal-body{
+	padding: 5px  26px !important;
+}
+#overviewModal.modal .modal-dialog {
+    margin-top: 50px;
+}
+*/
+.small-title{
+	color: #408AB4;
+}
+:host ::ng-deep .table th, :host ::ng-deep .jsgrid .jsgrid-table th, :host ::ng-deep .table td, :host ::ng-deep .jsgrid .jsgrid-table td{
+	border-top: unset;
+}
+.money_inflow{
+	background: #63C0FD;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.investing-tile,.golden-nugget{
+	height: 500px;
+}
+#golden_merchant{
+	width: auto !important;
+	background: #fff;
+}
+.inflow_header_btn{
+	width: 81px;
+}
+
+:host ::ng-deep  .red-dot {
+  height: 6px;
+  width: 6px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+:host ::ng-deep  .green-dot {
+  height: 6px;
+  width: 6px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+
+:host ::ng-deep .dataTables_scrollHeadInner,:host ::ng-deep .table{
+  width:100% !important;
+}
+
+:host ::ng-deep #overviewModal{
+  overflow:hidden;
+}
+:host ::ng-deep #overviewModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #overviewModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+
+:host ::ng-deep #overviewModal td:nth-child(1){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-left: 48px !important;
+  width: 35% !important;
+}
+:host ::ng-deep #overviewModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-right: 48px !important;
+  width: 50% !important;
+}
+
+:host ::ng-deep #overviewModal td:nth-child(3){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-right: 48px !important;
+  width: 15% !important;
+}
+:host ::ng-deep #overviewModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #overviewModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #overviewModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+
+
+:host ::ng-deep #overviewModal.modal .table th:nth-child(1){
+	width: 35% !important;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #overviewModal.modal .table th:nth-child(2){
+	width: 50% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #overviewModal.modal .table th:nth-child(3){
+	width: 15% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #overviewModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+:host ::ng-deep #overviewModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #overviewModal .pagination .page-link:hover,:host ::ng-deep #overviewModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #overviewModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #overviewModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep #overviewModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+@media(min-width:992px){
+  :host ::ng-deep #overviewModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+
+:host ::ng-deep #overviewModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+:host ::ng-deep #overviewModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+
+
+:host ::ng-deep #transModal{
+  overflow:hidden;
+}
+:host ::ng-deep #transModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #transModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+:host ::ng-deep #transModal.modal .table th:nth-child(1){
+	width: 20% !important;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #transModal.modal .table th:nth-child(2){
+	width: 45% !important;
+}
+:host ::ng-deep #transModal.modal .table th:nth-child(3){
+	width: 25% !important;
+}
+:host ::ng-deep #transModal.modal .table th:nth-child(4){
+	width: 10% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #transModal td:nth-child(1){
+	font-size: 15px !important;
+	opacity: 0.8;
+	padding-left: 48px !important;
+  width: 20% !important;
+
+}
+:host ::ng-deep #transModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  width: 45% !important;
+}
+:host ::ng-deep #transModal td:nth-child(2) .subsection{
+  font-weight:300;
+  font-size:14px;
+  text-transform:capitalize;
+}
+:host ::ng-deep #transModal td:nth-child(3){
+	font-size: 17px !important;
+	opacity: 0.8;
+  width: 25% !important;
+}
+:host ::ng-deep #transModal td:nth-child(4){
+	font-size: 17px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-right: 48px !important;
+  width: 10% !important;
+}
+:host ::ng-deep #transModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #transModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #transModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+:host ::ng-deep #transModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+@media(min-width:992px){
+  :host ::ng-deep #transModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+:host ::ng-deep #transModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+:host ::ng-deep #transModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+:host ::ng-deep #transModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #transModal .pagination .page-link:hover,:host ::ng-deep #transModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #transModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #transModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+
+.ui.dimmer{
+    z-index:1042 !important;
+}
+.pointer{
+  cursor:pointer;
+}
+:host ::ng-deep #transModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+:host ::ng-deep .table td span, :host ::ng-deep .table th span{
+    display: inline-block;
+    vertical-align: sub;
+}
+:host ::ng-deep .dataTables_filter,:host ::ng-deep .dataTables_filter label,:host ::ng-deep .dataTables_filter input{
+	width: 100% !important;
+}
+:host ::ng-deep .dataTables_filter input{
+	margin-left: 1rem !important;
+	background: #f0f4f7;
+	border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 7px 10px;
+}
+
+:host ::ng-deep .dataTable thead tr{
+	background: #fff !important;
+}
+:host ::ng-deep .modal-title{
+	font-weight: 300 !important;
+}
+:host ::ng-deep .modal-header .modal-title{
+	font-weight: 700 !important;
+	font-size: 16px;
+}
+:host ::ng-deep .close{
+	font-size: 2.5rem !important;
+    font-weight: 100 !important;
+}
+:host ::ng-deep input[type="search"]{
+	background-image: url(/assets/images/search.png);
+    background-position: 14px 11px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    padding-left: 32px;
+}
+
+:host ::ng-deep input[type="search"]::placeholder{
+	color: #bec9d4;
+	font-size: 11px;
+}
+
+
+
+
+/* <ccDetailModal> */
+
+:host ::ng-deep #ccDetailModal{
+  overflow:hidden;
+}
+:host ::ng-deep #ccDetailModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #ccDetailModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+
+:host ::ng-deep #ccDetailModal td:nth-child(1){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-left: 48px !important;
+  width: 20% !important;
+}
+:host ::ng-deep #ccDetailModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+
+  width: 35% !important;
+}
+
+:host ::ng-deep #ccDetailModal td:nth-child(3){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  width: 15% !important;
+}
+:host ::ng-deep #ccDetailModal td:nth-child(4){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  width: 15% !important;
+}
+:host ::ng-deep #ccDetailModal td:nth-child(5){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-right: 48px !important;
+  width: 15% !important;
+}
+:host ::ng-deep #ccDetailModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #ccDetailModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #ccDetailModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+
+
+:host ::ng-deep #ccDetailModal.modal .table th:nth-child(1){
+	width: 20% !important;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #ccDetailModal.modal .table th:nth-child(2){
+	width: 35% !important;
+}
+:host ::ng-deep #ccDetailModal.modal .table th:nth-child(3){
+	width: 15% !important;
+}
+:host ::ng-deep #ccDetailModal.modal .table th:nth-child(4){
+	width: 15% !important;
+}
+:host ::ng-deep #ccDetailModal.modal .table th:nth-child(5){
+	width: 15% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #ccDetailModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+:host ::ng-deep #ccDetailModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #ccDetailModal .pagination .page-link:hover,:host ::ng-deep #ccDetailModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #ccDetailModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #ccDetailModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep #ccDetailModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+@media(min-width:992px){
+  :host ::ng-deep #ccDetailModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+
+:host ::ng-deep #ccDetailModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+:host ::ng-deep #ccDetailModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+/* </ccDetailModal> */
+
+
+/* <savingDetailModal> */
+
+:host ::ng-deep #savingDetailModal{
+  overflow:hidden;
+}
+:host ::ng-deep #savingDetailModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #savingDetailModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+
+:host ::ng-deep #savingDetailModal td:nth-child(1){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-left: 48px !important;
+  width: 30% !important;
+}
+:host ::ng-deep #savingDetailModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  width: 50% !important;
+}
+:host ::ng-deep #savingDetailModal td:nth-child(3){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  padding-right: 48px !important;
+  width: 20% !important;
+}
+
+
+:host ::ng-deep #savingDetailModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #savingDetailModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #savingDetailModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+
+
+:host ::ng-deep #savingDetailModal.modal .table th:nth-child(1){
+	width: 30% !important;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #savingDetailModal.modal .table th:nth-child(2){
+	width: 50% !important;
+}
+:host ::ng-deep #savingDetailModal.modal .table th:nth-child(3){
+	width: 20% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #savingDetailModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+:host ::ng-deep #savingDetailModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #savingDetailModal .pagination .page-link:hover,:host ::ng-deep #savingDetailModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #savingDetailModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #savingDetailModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep #savingDetailModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+@media(min-width:992px){
+  :host ::ng-deep #savingDetailModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+
+:host ::ng-deep #savingDetailModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+:host ::ng-deep #savingDetailModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+/* </savingDetailModal> */
+
+
+
+/* <incomeStreamDetailModal> */
+
+:host ::ng-deep #incomeStreamDetailModal{
+  overflow:hidden;
+}
+:host ::ng-deep #incomeStreamDetailModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #incomeStreamDetailModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+
+:host ::ng-deep #incomeStreamDetailModal td:nth-child(1){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-left: 48px !important;
+  width: 70% !important;
+}
+:host ::ng-deep #incomeStreamDetailModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+  padding-right: 48px !important;
+  width: 30% !important;
+}
+
+
+:host ::ng-deep #incomeStreamDetailModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #incomeStreamDetailModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #incomeStreamDetailModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+
+
+:host ::ng-deep #incomeStreamDetailModal.modal .table th:nth-child(1){
+	width: 70% !important;
+	padding-left: 48px !important;
+}
+
+:host ::ng-deep #incomeStreamDetailModal.modal .table th:nth-child(5){
+	width: 30% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #incomeStreamDetailModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+:host ::ng-deep #incomeStreamDetailModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #incomeStreamDetailModal .pagination .page-link:hover,:host ::ng-deep #incomeStreamDetailModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #incomeStreamDetailModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #incomeStreamDetailModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep #incomeStreamDetailModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+@media(min-width:992px){
+  :host ::ng-deep #incomeStreamDetailModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+
+:host ::ng-deep #incomeStreamDetailModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+:host ::ng-deep #incomeStreamDetailModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+/* </incomeStreamDetailModal> */
+.progress.progress-lg {
+    height: 45px;
+	width: 100%;
+	border-radius: 10px;
+}
+.progress {
+    border-radius: 10px;
+}
+.green-fill{
+	background-color: #2bd9ae !important;
+}
+.yellow-fill{
+	background-color: #ffdf80 !important;
+}
+.red-fill{
+	background-color: #d72b40 !important;
+}
+.disabled-btn{
+	border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 10px;
+}
+.ccu-sec{
+		border-bottom: 1px solid #ddd;
+}
+#ccUtilModal .modal-body{
+	font-size: 14px;
+}
+#ccUtilModal .modal-dialog{
+	max-width: 550px;
+}

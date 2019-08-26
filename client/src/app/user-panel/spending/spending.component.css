@@ -1,0 +1,304 @@
+:host ::ng-deep .card{
+	border: 0;
+	border-radius: 10px;
+}
+.spending-section svg{
+  font-size:32px;
+}
+.spending-section  .fa-list{
+  font-size:12px !important
+}
+.colored-btn.ratio{
+  margin-bottom:10px;
+}
+:host ::ng-deep #biggest-spending .highcharts-axis-title{
+  font-family: "NunitoSans", sans-serif !important;
+}
+:host ::ng-deep #breakOutContainer .highcharts-plot-border{
+  stroke-dasharray: 0,179%,342%;
+}
+.min-height-32{
+  min-height:32px;
+}
+.no-margin-first > :first-child { margin-left: 0 !important; }
+a{
+  cursor:pointer;
+}
+.ml-70{
+  margin-left:70px;
+}
+.highcharts-tooltip>span {
+    padding: 11px;
+    border-bottom: 1px solid black;
+}
+#spendingModal{
+  overflow:hidden;
+}
+#spendingModal table{
+  border-spacing:0;
+}
+:host ::ng-deep #spendingModal .modal-body{
+  overflow-y:auto;
+  /* max-height:470px; */
+}
+/*
+:host ::ng-deep #spendingModal .modal-body:before{
+  padding: 2px 5px;
+  content: "Please scroll to view more.";
+  color: #fff;
+  background: #ccc;
+}
+*/
+:host ::ng-deep #spendingModal.modal .table th:nth-child(1){
+	width: 20% !important;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #spendingModal.modal .table th:nth-child(2){
+	width: 45% !important;
+}
+:host ::ng-deep #spendingModal.modal .table th:nth-child(3){
+	width: 25% !important;
+}
+:host ::ng-deep #spendingModal.modal .table th:nth-child(4){
+	width: 10% !important;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #spendingModal td:nth-child(1){
+	font-size: 15px !important;
+	opacity: 0.8;
+	padding-left: 48px !important;
+}
+:host ::ng-deep #spendingModal td:nth-child(2){
+	font-size: 16px !important;
+	line-height: 18px !important;
+	font-weight: 600;
+	opacity: 1;
+}
+:host ::ng-deep #spendingModal td:nth-child(2) .subsection,:host ::ng-deep .recent-transactions .subsection{
+  font-weight:300;
+  font-size:14px;
+  text-transform:capitalize;
+}
+
+:host ::ng-deep #spendingModal td:nth-child(3){
+	font-size: 17px !important;
+	opacity: 0.8;
+}
+:host ::ng-deep #spendingModal td:nth-child(4){
+	font-size: 17px !important;
+	font-weight: 600;
+	opacity: 1;
+	padding-right: 48px !important;
+}
+:host ::ng-deep #spendingModal.modal .table td{
+	font-size: 13px;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 16px 12px 16px 0px;
+}
+:host ::ng-deep #spendingModal.modal .table tr:hover{
+	background: rgba(0, 131, 217, 0.1);
+    cursor:pointer;
+	color: #0083D9;
+	font-weight: 600;
+}
+:host ::ng-deep #spendingModal.modal .table th{
+	font-size: 13px !important;
+	font-family: "NunitoSans", sans-serif !important;
+	padding: 4px 12px 4px 0px !important;
+	color: #585d74 !important;
+	font-weight: 500;
+}
+:host ::ng-deep #spendingModal.modal .modal-footer{
+	padding: 6px 31px;
+}
+@media(min-width:992px){
+  #spendingModal .modal-dialog{
+    max-width: 85% !important;
+  }
+}
+#spendingModal .modal-body{
+	/* padding: 5px  26px !important; */
+	padding: 0 !important;
+}
+#spendingModal.modal .modal-dialog {
+    margin-top: 20px;
+}
+
+.min-height-55{
+  min-height:55px;
+}
+.comments_bubble{
+  cursor:pointer;
+}
+:host ::ng-deep .dataTables_info{
+	float: left;
+}
+:host ::ng-deep .spending-tile {
+	border-radius: 2px !important;
+    border: 0 !important;
+    box-shadow: 0px 4px 16px #ccc;
+}
+:host ::ng-deep .spending-tile h5 small{
+	color: #63c0fd !important;
+	font-weight: 800 !important;
+}
+:host ::ng-deep .spending-breakout-legend{
+	background: transparent;
+	/* border: 0; */
+	/* border-radius: 0; */
+	/* box-shadow: unset !important; */
+	overflow: hidden;
+}
+:host ::ng-deep .spending-breakout-legend-left{
+	background: #fff;
+	padding: 8px 8px 8px 8px;
+}
+:host ::ng-deep .spending-breakout-legend-right{
+	padding: 8px 13px 8px 8px;
+	font-size: 13px;
+	color: #fff;
+}
+:host ::ng-deep .spending-breakout-legend2{
+	background: transparent;
+	/* border: 0; */
+	/* border-radius: 0; */
+	width: 250px;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px #bbb;
+}
+:host ::ng-deep .spending-breakout-legend2:clicked{
+	border-radius: 9px;
+    border: 0 !important;
+    font-size: 1rem;
+    min-width: 90px !important;
+    box-shadow: 0px 0px 10px #888;
+}
+:host ::ng-deep .spending-breakout-legend2-left{
+	background: #fff;
+	padding: 15px 15px;
+	font-size: 14px;
+}
+:host ::ng-deep .spending-breakout-legend2-right{
+	font-size: 13px;
+	padding: 20px 116px 20px 15px;
+	font-size: 16px;
+}
+.recent-transactions .table td, .jsgrid .jsgrid-table td{
+	padding: 1rem !important;
+	font-size: 18px;
+}
+:host ::ng-deep .spending-ratio-section .card{
+	background: transparent;
+}
+:host ::ng-deep .spending-ratio-section .card .card-body{
+	background: white!important;
+	border: 0;
+    border-radius: 10px;
+}
+:host ::ng-deep .spending-breakout-legend{
+	font-size: 0.8rem;
+	min-width: 100px !important;
+}
+:host ::ng-deep .spending-breakout-legend .spending-breakout-legend-right{
+	padding: 8px !important;
+}
+:host ::ng-deep .sdbtn{
+	background: #fff;
+	color: #3c4876 !important;
+	font-weight: 600;
+	font-size: 0.7rem;
+	box-shadow: 0px 4px 10px #dfedf7;
+}
+
+:host ::ng-deep .sdbtn span{
+	vertical-align: middle;
+}
+
+:host ::ng-deep .sdbtn span.cicon{
+	height: 12px;
+    width: 12px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+:host ::ng-deep .min-height-22{
+  min-height:22px;
+}
+:host ::ng-deep  .min-height-70{
+  min-height:70px;
+}
+
+:host ::ng-deep #transactionsPopTable td{
+	border-top: 0 !important;
+}
+/* :host ::ng-deep #transactionsPopTable td:nth-child(1),:host ::ng-deep #transactionsPopTable td:nth-child(3){ */
+	/* font-size: 12px !important; */
+	/* opacity: 0.8; */
+/* } */
+:host ::ng-deep #spendingModal .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep #spendingModal .pagination .page-link:hover,:host ::ng-deep #spendingModal .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep #spendingModal .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep #spendingModal .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep #spendingModal .dataTables_filter{
+	margin-left: 48px;
+	margin-right: 48px;
+}
+:host ::ng-deep .dataTables_filter,:host ::ng-deep .dataTables_filter label,:host ::ng-deep .dataTables_filter input{
+	width: 100% !important;
+}
+:host ::ng-deep .dataTables_filter input{
+	margin-left: 1rem !important;
+	background: #f0f4f7;
+	border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 7px 10px;
+}
+
+:host ::ng-deep .dataTable thead tr{
+	background: #fff !important;
+}
+:host ::ng-deep .modal-title{
+	font-weight: 300 !important;
+}
+:host ::ng-deep .close{
+	font-size: 2.5rem !important;
+    font-weight: 100 !important;
+}
+:host ::ng-deep input[type="search"]{
+	background-image: url(/assets/images/search.png);
+    background-position: 14px 11px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    padding-left: 32px;
+}
+
+:host ::ng-deep input[type="search"]::placeholder{
+	color: #bec9d4;
+	font-size: 11px;
+}
+
+:host ::ng-deep .table-tr{
+	cursor: pointer;
+}
+:host ::ng-deep .table-tr:hover{
+	background: #f3f3f3;
+}
+
+.spending-breakout-section3,.spending-breakout-section4{
+	min-height: 700px;
+}

@@ -1,0 +1,352 @@
+:host ::ng-deep  .noUi-target .noUi-base .noUi-origin .noUi-handle .noUi-tooltip{
+	bottom: 215% !important;
+}
+:host ::ng-deep .daterangepicker .drp-calendar.right {
+  display: none !important;
+}
+:host ::ng-deep  .red-dot {
+  height: 6px;
+  width: 6px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+:host ::ng-deep  .green-dot {
+  height: 6px;
+  width: 6px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+:host ::ng-deep  .colored-label {
+  height: 16px;
+  width: 8px;
+  border-radius: 25%;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+      margin-top: -4px;
+}
+
+:host ::ng-deep .name-icon {
+  /* content:attr(data-letters); */
+  display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.5em;
+  text-align:center;
+  border-radius:50%;
+  background:plum;
+  vertical-align:middle;
+  margin-right:3px;
+  color:white;
+  }
+:host ::ng-deep .pull-left #transTbl_filter{
+	float: left!important;
+	width: 100%!important;
+	text-align: left!important;
+}
+:host ::ng-deep .pull-left #transTbl_filter input{
+	border-top: 0!important;
+	border-left: 0!important;
+	border-right: 0!important;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB2ZXJzaW9uPSIxLjEiICAgaWQ9InN2ZzQ0ODUiICAgdmlld0JveD0iMCAwIDIxLjk5OTk5OSAyMS45OTk5OTkiICAgaGVpZ2h0PSIyMiIgICB3aWR0aD0iMjIiPiAgPGRlZnMgICAgIGlkPSJkZWZzNDQ4NyIgLz4gIDxtZXRhZGF0YSAgICAgaWQ9Im1ldGFkYXRhNDQ5MCI+ICAgIDxyZGY6UkRGPiAgICAgIDxjYzpXb3JrICAgICAgICAgcmRmOmFib3V0PSIiPiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+ICAgICAgICA8ZGM6dHlwZSAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4gICAgICAgIDxkYzp0aXRsZT48L2RjOnRpdGxlPiAgICAgIDwvY2M6V29yaz4gICAgPC9yZGY6UkRGPiAgPC9tZXRhZGF0YT4gIDxnICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC0xMDMwLjM2MjIpIiAgICAgaWQ9ImxheWVyMSI+ICAgIDxnICAgICAgIHN0eWxlPSJvcGFjaXR5OjAuNSIgICAgICAgaWQ9ImcxNyIgICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjAuNCw4NjYuMjQxMzQpIj4gICAgICA8cGF0aCAgICAgICAgIGlkPSJwYXRoMTkiICAgICAgICAgZD0ibSAtNTAuNSwxNzkuMSBjIC0yLjcsMCAtNC45LC0yLjIgLTQuOSwtNC45IDAsLTIuNyAyLjIsLTQuOSA0LjksLTQuOSAyLjcsMCA0LjksMi4yIDQuOSw0LjkgMCwyLjcgLTIuMiw0LjkgLTQuOSw0LjkgeiBtIDAsLTguOCBjIC0yLjIsMCAtMy45LDEuNyAtMy45LDMuOSAwLDIuMiAxLjcsMy45IDMuOSwzLjkgMi4yLDAgMy45LC0xLjcgMy45LC0zLjkgMCwtMi4yIC0xLjcsLTMuOSAtMy45LC0zLjkgeiIgICAgICAgICBjbGFzcz0ic3Q0IiAvPiAgICAgIDxyZWN0ICAgICAgICAgaWQ9InJlY3QyMSIgICAgICAgICBoZWlnaHQ9IjUiICAgICAgICAgd2lkdGg9IjAuODk5OTk5OTgiICAgICAgICAgY2xhc3M9InN0NCIgICAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjY5NjQsLTAuNzE3NiwwLjcxNzYsMC42OTY0LC0xNDIuMzkzOCwyMS41MDE1KSIgICAgICAgICB5PSIxNzYuNjAwMDEiICAgICAgICAgeD0iLTQ2LjIwMDAwMSIgLz4gICAgPC9nPiAgPC9nPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: 230px 8px !important;
+	width: 250px;
+}
+:host ::ng-deep .toolbar{
+	float: left;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-top: 60px;
+}
+:host ::ng-deep .rounded{
+	border-radius: 50px !important;
+}
+:host ::ng-deep #fromDate,#toDate{
+	height: 2.7rem;
+}
+:host ::ng-deep .ui.multiple.dropdown > .label{
+	text-transform: capitalize;
+}
+:host ::ng-deep .form-control[readonly]
+{
+	background: unset!important;
+}
+:host ::ng-deep .filter{
+	background: transparent !important;
+	padding: 3px 0 !important;
+	/* float: right;  */
+}
+:host ::ng-deep table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting{
+	padding-right: 0px !important;
+}
+:host ::ng-deep .btn{
+  /* padding: 0.875rem 1.5rem !important; */
+  font-size: 9px !important;
+  padding: 6px 0px!important;
+  width: 64px !important;
+  border: 2px solid #047bd0 !important;
+  color: #047bd0 !important;
+  font-weight: 1000;
+  border-radius: 9px !important;
+  background: unset;
+}
+:host ::ng-deep .btn:hover{
+  background: #047bd0 !important;
+  color: #fff !important;
+}
+:host ::ng-deep .btn.active{
+  background: #047bd0 !important;
+  color: #fff !important;
+}
+:host ::ng-deep #filter2 a:not(.not-upper) {
+	display: none!important;
+}
+:host ::ng-deep #filter3 a:not(.not-upper) {
+	display: none!important;
+}
+:host ::ng-deep #filter5 a:not(.not-upper) {
+	display: none!important;
+}
+/* :host ::ng-deep .datepicker.datepicker-dropdown { */
+ /* top: 75px !important; */
+/* } */
+/* :host ::ng-deep .datepicker.datepicker-dropdown .datepicker-days table.table-condensed{ */
+ /* line-height: 1rem !important; */
+/* } */
+:host ::ng-deep #transTbl{
+	min-height: 400px;
+}
+:host ::ng-deep .notify-badge{
+    position: absolute;
+    right: -2px;
+    top: 3px;
+    background: red;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color: white;
+    padding: 3px 3px;
+    font-size: 20px;
+}
+.table thead th, .table td{
+  font-size: 1em !important;
+  padding: 6px 0 6px 12px !important;
+}
+.table thead{
+  border-bottom: 1px solid #f3f3f3;
+}
+:host ::ng-deep .table td{
+  font-size: 1em !important;
+  padding: 10px 0 10px 12px !important;
+  border-top: unset;
+  line-height: 19px;
+}
+:host ::ng-deep .table td small{
+  color: #aaa;
+}
+div.dataTables_wrapper div.dataTables_info{
+  padding-top: 1em !important;
+  padding-left: 15px;
+}
+/* :host ::ng-deep table.dataTable thead{
+  border-collapse: collapse !important;
+} */
+.filter.icon{
+  font-size: 12px;
+}
+:host ::ng-deep  .pagination {
+  margin-right: 30px !important;
+  margin-bottom: 20px !important;
+}
+:host ::ng-deep  .pagination .page-link{
+	border: 0 !important;
+	border-radius: 20px;
+	margin-right: 5px;
+	font-size: .675rem !important;
+}
+:host ::ng-deep  .pagination .page-link:hover,:host ::ng-deep  .pagination .active .page-link{
+	background: #63C0FD;
+}
+:host ::ng-deep  .pagination .disabled:hover a{
+	background: transparent !important;
+	color: #000;
+}
+:host ::ng-deep  .pagination .page-link:focus{
+	box-shadow: unset;
+}
+:host ::ng-deep .table tbody tr:first-child td{
+  border-top: 1px solid #f3f3f3;
+}
+:host ::ng-deep .dataTables_info {
+  float: left;
+}
+.ui.dropdown .menu > .header{
+  text-transform: none!important;    
+  font-size: 12px;
+  font-weight: 100;
+}
+.ui.top.left.pointing.dropdown > .menu{
+  background: #fafafa;
+}
+.ui.top.left.pointing.dropdown > .menu:after{
+  background: #fafafa;
+}
+#search_checkin,#search_checkout{
+  border: 0;
+  background: #F0F4F7;
+  padding: 6px 12px;
+  width: 110px;
+  border-radius: 8px;
+}
+#search_checkin,#search_checkout{
+  background: url(/assets/images/calendar2.png) no-repeat scroll 88px 7px #F0F4F7;
+  background-size: 12px;
+  padding-right: 30px;
+}
+#search_checkin:focus,#search_checkout:focus{
+  background: url(/assets/images/calendar.png) no-repeat scroll 88px 7px #F0F4F7;
+  background-size: 12px;
+}
+:host ::ng-deep .ui.dropdown .menu .item{
+  white-space: unset;
+  font-size: 11px;
+  color: #072D57;
+  font-family: "NunitoSans", sans-serif;
+  border-bottom: 1px solid #fafafa;
+  line-height: 14px;
+  padding: 0.4rem 1.14285714em !important;
+  border-bottom: 1px solid #eee;
+}
+:host ::ng-deep .table-responsive{
+  overflow-x: unset;
+}
+:host ::ng-deep .content-wrapper{
+  overflow: auto;
+}
+:host ::ng-deep .ui.dropdown > .text{
+  display: none!important;
+}
+:host ::ng-deep .ui.icon.input > i.icon{
+  right: unset;
+  left: 0 !important;
+  width: 1.5em !important;
+  color: #ccc;
+}
+.ui.icon.input > input{
+  padding-right: 1em !important;
+  padding-left: 2em !important;
+  background: transparent;
+  border: 0;
+  border-radius: 0px;
+  border-bottom: 1px solid #eee;
+}
+.ui.icon.input > input::placeholder{
+  color: #ccc;
+}
+.ui.dropdown > .animating.menu .scrolling.menu, .ui.dropdown > .visible.menu .scrolling.menu{
+  border: 0 !important;
+  background: transparent;
+}
+.mulFilters2 a{
+  font-size: 11px;
+}
+.ui.active.button:hover,.ui.active.button,.ui.button:hover{
+  color: #63c0fd !important;
+}
+#minAmt,#maxAmt{
+  width: 120px;
+  border: 0;
+  background: #e2e2e2;
+  padding: 10px 12px !important;
+  border-radius: 6px;
+  font-size: 11px;
+}
+#minAmt::placeholder,#maxAmt::placeholder{
+  color: #3E4873;
+}
+
+#minAmt::-webkit-inner-spin-button,#maxAmt::-webkit-inner-spin-button,#minAmt::-webkit-outer-spin-button,#maxAmt::-webkit-outer-spin-button{
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+:host ::ng-deep .quantity input {
+  width: 45px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+}
+
+:host ::ng-deep .quantity input:focus {
+  outline: 0;
+}
+
+:host ::ng-deep .quantity-nav {
+  float: left;
+  position: relative;
+  height: 20px;
+}
+
+:host ::ng-deep .quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+:host ::ng-deep .up1 {
+  position: absolute;
+  height: 50%;
+  top: 7px;
+  right:-7px;
+}
+
+:host ::ng-deep .down1 {
+  position: absolute;
+  bottom: -11px;
+  right: -7px;
+  height: 50%;
+}
+
+:host ::ng-deep .up2 {
+  position: absolute;
+  height: 50%;
+  top: 7px;
+  right: 1px;
+}
+
+:host ::ng-deep .down2 {
+  position: absolute;
+  bottom: -11px;
+  right: 1px;
+  height: 50%;
+}
+:host ::ng-deep .sync-icon{
+  font-size: 10px;
+    margin-left: 8px;
+}

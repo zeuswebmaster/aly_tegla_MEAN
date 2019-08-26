@@ -1,0 +1,112 @@
+<div class="row register-page">
+  <div class="floating-form">
+    <div class="card register-card mt-3 mb-3">
+      <div class="card-body px-3 py-3">
+		<div class="login-small-logo mt-2">
+			<img src="assets/images/login-small-logo.png" width="110" />
+		  </div>
+                <form [formGroup]="registerForm" (ngSubmit)="chooseOtpMethod()"  class="px-1 py-4 mb-5" method="post">
+                  <h3 class="mb-4 text-center register-heading">Create Account</h3>
+                  <div id="response"></div>
+                  <div  [hidden]="otpSent || chooseMethod" class="text-center">
+                      <div class="row">
+                        <div class="col-12 d-flex">
+                          <div class="floating-label col-12 pl-0 pr-1 py-0">
+                            <input type="text" class="form-control floating-input input-name" placeholder="Name" formControlName="first_name"  [(ngModel)]="credentials.first_name" required />
+                            <span class="highlight"></span>
+                            <label>Name</label>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group floating-label">
+                        <input type="email" class="form-control floating-input input-email" placeholder="Email"  formControlName="email"  [(ngModel)]="credentials.email"  required>
+                        <span class="highlight"></span>
+                        <label>Email</label>
+                      </div>
+                      <div class="form-group floating-label">
+                        <input [attr.type]="eyeOpen"  placeholder="Password" class="form-control floating-input input-password" id="pwd" formControlName="password"  [(ngModel)]="credentials.password" style="padding-right: 120px;" required />
+                        <span class="eye-drop"  [hidden]="eyeOpen=='text'" (click)="togglePwd()"><i class="far fa-eye-slash" ></i></span>
+                        <span class="eye-drop"  [hidden]="eyeOpen=='password'" (click)="togglePwd()"><i class="far fa-eye"></i></span>
+                        <span class="highlight"></span>
+                        <label>Password</label>
+                      </div>
+                      <div class="site-color text-left" *ngIf="f.password.errors">
+                            <div *ngIf="f.password.errors.pattern">
+                              <span style="font-size:10px">Password must contain at least:</span>
+                              <ul style="font-size:10px">
+                                <li>8 characters</li>
+                                <li>1 uppercase and 1 lowercase letter</li>
+                                <li>1 number</li>
+                                <li>1 special character</li>
+                              </ul>
+                            </div>
+                      </div>
+                      <div class="form-group  floating-label">
+                        <input [attr.type]="eyeCOpen"   placeholder="Confirm Password"  class="form-control  floating-input input-password" id="cpwd" formControlName="cpassword" style="padding-right: 120px;" required  />
+                        <span class="eye-drop"  [hidden]="eyeCOpen=='text'" (click)="toggleCPwd()"><i class="far fa-eye-slash" ></i></span>
+                        <span class="eye-drop"  [hidden]="eyeCOpen=='password'" (click)="toggleCPwd()"><i class="far fa-eye"></i></span>
+                        <span class="highlight"></span>
+                        <label>Confirm Password</label>
+                      </div>
+                      <!-- <div class="error-msg" *ngIf="credentials.password !== credentials.cpassword"> -->
+                        <!-- Passwords don't match. -->
+                      <!-- </div> -->
+                      <div class="form-group floating-label">
+                        <input type="text" placeholder="Mobile Number" class="form-control  floating-input input-mobile" formControlName="phone" id="phone" [(ngModel)]="credentials.phone"  />
+                        <span class="highlight"></span>
+                        <label>Mobile Number</label>
+                      </div>
+
+                      <div class="row mt-4">
+                          <div class="col-sm-12 text-left">
+                              <p style="font-size: 12px;">By checking this box you consent to our:</p>
+                              <div class="round col-sm-2 float-left">
+                                  <input type="checkbox" id="checkbox2" formControlName="agreement" />
+                                  <label for="checkbox2" class="mt-2 form-check-label"></label>
+                              </div>
+                              <div class="col-sm-10 float-right p-0">
+                                <ul>
+                                <li style="font-size: 12px;"><a href="#"><b class="base-color">E-Sign</b></a> to receive document electronically</li>
+                                <li style="font-size: 12px;"><a href="#" class="base-color"><b>Terms of Use</b></a> and <a href="#" class="base-color"><b>Privacy Policy</b></a>, as well as acknowledge receipt of our <a href="#" class="base-color"><b>Privacy Notice</b></a></li>
+                                </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <button type="submit" class="btn btn-default submit-btn mb-3 mt-2" [disabled]="registerForm.invalid"  style="font-size: 14px;">SIGN UP</button>
+                      <p class="text-center sign-up-statement">Already have an account? <a href="login" class="base-color link">Log In</a></p>
+                    </div>
+                    <div  [hidden]="!chooseMethod" class="text-center">
+                        <div [hidden]="otpRequested">
+                              <p>Please choose a verification method</p>
+                              <div class="d-flex align-items-center justify-content-between pb-3">
+                                  <div class="form-check form-check-info">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" formControlName="otpsendon" value="email" [(ngModel)]="credentials.requested_otp_on"   id="otpsendon1" checked="checked">
+                                        Verify by email
+                                      <i class="input-helper"></i></label>
+                                    </div>
+                                  <div class="form-check form-check-info" [hidden]="credentials.phone == ''">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" formControlName="otpsendon" [(ngModel)]="credentials.requested_otp_on"  value="phone" id="otpsendon2">
+                                        Verify by mobile
+                                        <i class="input-helper"></i>
+                                      </label>
+                                  </div>
+                              </div>
+                              <button  [hidden]="otpRequested" type="button"  [disabled]="registerForm.invalid" class="btn btn-default submit-btn mb-3 mt-2"  style="font-size: 14px;" (click)="register()">Send Passcode</button>
+                        </div>
+                        <div class="form-group floating-label" [hidden]="!otpRequested">
+                          <input type="number" placeholder="One Time Passcode" class="form-control  floating-input" formControlName="otp"  [(ngModel)]="credentials.otp"  [ngClass]="{ 'is-invalid': submitted && f.otp.errors }" required>
+                          <span class="highlight"></span>
+                          <label>One Time Passcode</label>
+                        </div>
+                        <button  [hidden]="!otpRequested" type="button"  [disabled]="registerForm.invalid"  class="btn btn-default submit-btn mb-3 mt-2"  style="font-size: 14px;" (click)="verify()">Verify Passcode</button>
+                          <p class="text-center" [hidden]="!otpRequested">Didn’t receive a passcode? <b  (click)="reSendOtp()" class="site-color"  style="cursor:pointer">Resend Passcode</b></p>
+                    </div>
+                </form>
+
+      </div>
+    </div>
+  </div>
+</div>

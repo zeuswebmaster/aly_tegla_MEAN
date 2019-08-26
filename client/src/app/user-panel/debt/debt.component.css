@@ -1,0 +1,622 @@
+.debts-card{
+	background: transparent !important;
+	border: 0 !important;
+}
+.debts-card #pills-tab{
+	border: 0;
+	padding: 0;
+}
+.debts-card #pills-tabContent{
+	background: #e8f3fa;
+
+}
+.debts-card .nav-pills .nav-item{
+	margin-right: 0;
+  width: calc(20% - 0.6rem);
+}
+.debts-card .tab-content{
+	border: 0;
+}
+
+/*** Tabs button css ****/
+.tabs li {
+  /* Makes a horizontal row */
+  float: left;
+
+  /* So the psueudo elements can be
+     abs. positioned inside */
+  position: relative;
+}
+.tabs a {
+  /* Make them block level
+     and only as wide as they need */
+  float: left;
+  padding: 10px 5px;
+  text-decoration: none;
+
+  /* Default colors */
+  color: black;
+  background: transparent;
+
+  /* Only round the top corners */
+  -webkit-border-top-left-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.tabs .active {
+  /* Highest, active tab is on top */
+  z-index: 3;
+}
+.tabs .active a {
+  /* Colors when tab is active */
+  background: #e8f3fa;
+  color: black;
+}
+.tabs li:before, .tabs li:after,
+.tabs li a:before, .tabs li a:after {
+  /* All pseudo elements are
+     abs. positioned and on bottom */
+  position: absolute;
+  bottom: 0;
+}
+/* Only the first, last, and active
+   tabs need pseudo elements at all */
+.tabs li:last-child:after,   .tabs li:last-child a:after,
+.tabs li:first-child:before, .tabs li:first-child a:before,
+.tabs .active:after,   .tabs .active:before,
+.tabs .active a:after, .tabs .active a:before {
+  content: "";
+}
+.tabs .active:before, .tabs .active:after {
+  background: #e8f3fa;
+
+  /* Squares below circles */
+  z-index: 1;
+}
+/* Squares */
+.tabs li:before, .tabs li:after {
+  background: #f7f7fa;
+  width: 10px;
+  height: 10px;
+}
+.tabs li:before {
+  left: -10px;
+}
+.tabs li:after {
+  right: -10px;
+}
+/* Circles */
+.tabs li a:after, .tabs li a:before {
+  width: 20px;
+  height: 20px;
+  /* Circles are circular */
+  -webkit-border-radius: 10px;
+  -moz-border-radius:    10px;
+  border-radius:         10px;
+  background: #f7f7fa;
+
+  /* Circles over squares */
+  z-index: 2;
+}
+.tabs .active a:after, .tabs .active a:before {
+  background: #f7f7fa;
+}
+/* First and last tabs have different
+   outside color needs */
+.tabs li:first-child.active a:before,
+.tabs li:last-child.active a:after {
+  background: #f7f7fa;
+}
+.tabs li a:before {
+  left: -20px;
+}
+.tabs li a:after {
+  right: -20px;
+}
+.debts-card .nav-pills .nav-link{
+	border: 0;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.tab-tile p{
+	color: #8a8a8a;
+}
+h5{
+	font-size: 1em;
+}
+#credit-cards-tab .tab-tile{
+	box-shadow: 0 4px 10px #63C0FD1A;
+	min-height: 254px;
+	border-radius: 10px;
+    background: #fff;
+}
+#student-loans-tab .tab-tile{
+	box-shadow: 0 4px 10px #63C0FD1A;
+	min-height: 254px;
+	border-radius: 10px;
+    background: #fff;
+}
+/* #student-loans-tab .tab-tile{ */
+	/* box-shadow: 0 4px 10px #63C0FD1A; */
+	/* border-radius: 10px; */
+    /* background: #fff; */
+/* } */
+#mortagage-tab .tab-tile{
+	box-shadow: 0 4px 10px #63C0FD1A;
+	min-height: 254px;
+	border-radius: 10px;
+    background: #fff;
+}
+/* #mortagage-tab .tab-tile{ */
+	/* box-shadow: 0 4px 10px #63C0FD1A; */
+	/* border-left: 1px solid #63C0FD1A; */
+	/* border-top: 1px solid #63C0FD1A; */
+	/* border-bottom: 1px solid #63C0FD1A; */
+	/* border-radius: 10px; */
+    /* background: #fff; */
+/* } */
+#mortagage-tab .amount-btn{
+	width: 95% !important;
+}
+#mortagage-tab h3{
+	height: unset !important;
+}
+#mortagage-tab img{
+	height: 50px;
+}
+#mortagage-tab .inner-tile{
+	border-right: 1px solid #63C0FD1A;
+	min-height: 100px;
+}
+#auto-tab .tab-tile{
+	box-shadow: 0 4px 10px #63C0FD1A;
+	min-height: 254px;
+	border-radius: 10px;
+    background: #fff;
+}
+#other-tab .tab-tile{
+	box-shadow: 0 4px 10px #63C0FD1A;
+	min-height: 254px;
+	border-radius: 10px;
+    background: #fff;
+}
+.amount-btn{
+	background: #63C0FD;
+    color: #fff;
+    min-width: 100px;
+    height: 40px;
+    line-height: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 12px;
+}
+.add-account-section{
+	margin: 0 auto;
+}
+
+.tips-box{
+  width: 380px;
+  height: 257px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(99, 192, 253, 0.15);
+  border-radius: 10px;
+}
+.tips-box.active, .tips-box:hover{
+  background: #63C0FD;
+}
+.tips-box p{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: normal;
+  text-align: center;
+  color: #3E4873;
+}
+.tips-box.active p, .tips-box:hover p{
+  color: #FFFFFF;
+}
+.tips-box.active .icon .white, .tips-box:hover .icon .white{
+  display:block;
+
+}
+.tips-box.active .icon .color, .tips-box:hover .icon .color{
+  display:none;
+}
+.tips-box .icon .white{
+  display:none;
+}
+.tips-box .icon .color{
+  display:block;
+}
+.tips-box .icon img{
+    margin: 0 auto;
+    padding: 10px;
+}
+.tips-box .icon{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.debt-calculator .card-body .debt-text{
+  font-size:20px !important;
+}
+.debt-categories #pCategories{
+  background: #63C0FD;
+  border-radius: 10px;
+}
+.debt-calculator .selection-box{
+  max-width: 339px;
+  width: 339px;
+  height: 213px;
+  background: #FFFFFF;
+  /* Shadow */
+  box-shadow: 0px 4px 10px rgba(99, 192, 253, 0.15);
+  border-radius: 4px;
+}
+.debt-calculator .selection-box .text{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: #3E4873;
+  padding-top:40px;
+
+}
+.debt-calculator .selection-box .amount{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: normal;
+  text-align: center;
+  color: #63C0FD;
+}
+.debt-calculator .selection-box small{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #3E4873;
+  display:block;
+  text-align: center;
+}
+.debt-calculator .selection-box .text sup{
+  left: 10px;
+    top: -0.8rem;
+}
+.debt-calculator .title{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: normal;
+  color: #3E4873;
+  opacity: 0.85;
+}
+.debt-calculator .img-payment{
+  width:40px;
+}
+:host ::ng-deep #monthlyslider .noUi-base{
+  height: 6px;
+  border-radius: 50px;
+  background: rgba(81, 187, 255, 0.4);
+}
+
+
+:host ::ng-deep #monthlyslider .noUi-base{
+  height: 6px;
+  border-radius: 50px;
+  background: rgba(81, 187, 255, 0.4);
+}
+:host ::ng-deep #monthlyslider.slider-primary .noUi-base .noUi-connect{
+  background:#63C1FD;
+}
+:host ::ng-deep #monthlyslider.noUi-target .noUi-base .noUi-origin .noUi-handle, :host ::ng-deep #monthlyslider.noUi-target .noUi-base .noUi-origin .noUi-handle:after{
+  background:#63C1FD;
+  border: none;
+  box-shadow:unset;
+}
+:host ::ng-deep #monthlyslider.noUi-target .noUi-pips .noUi-marker-horizontal{
+  display:none;
+}
+:host ::ng-deep #monthlyslider.noUi-target .noUi-pips .noUi-value{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #3E4873;
+  opacity: 0.85;
+}
+
+.buttonbox{
+  background: #FFFFFF;
+  height:50px;
+  width:100%;
+  border-radius: 10px;
+  background: #FFFFFF;
+  /* Shadow */
+  box-shadow: 0px 4px 10px rgba(99, 192, 253, 0.15);
+}
+
+.buttonbox-bg .text{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: normal;
+  color: #585D74;
+  padding:10px;
+  text-align:center;
+}
+
+.buttonbox-bg .value{
+  /* Blue */
+  background: #63C0FD;
+  border-radius: none;
+  height:50px;
+  width:120px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  float:right;
+  padding:10px;
+  text-align:center;
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.interestButton{
+  background: #9493FF;
+  border-radius: 10px;
+  border:none;
+}
+.principalButton{
+  background: #65BEFD;
+  border-radius: 10px;
+  border:none;
+}
+
+.chip-away .chip-title{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: normal;
+  color: #3E4873;
+  opacity: 0.85;
+}
+
+.chip-away .chip-text{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: normal;
+  color: #585D74;
+  opacity: 0.85;
+}
+.chip-away .questions{
+  color:#63C0FD;
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: normal;
+      text-decoration: underline;
+    vertical-align: inherit;
+}
+.chip-away .chip-info{
+  font-size:20px;
+  color:#63C0FD !important;
+}
+.sitecolor{
+  color:#63C0FD !important;
+}
+.method-box{
+  width: 280px;
+  height: 368px;
+  background: #FFFFFF;
+  /* Shadow */
+  box-shadow: 0px 4px 10px rgba(99, 192, 253, 0.15);
+  border-radius: 10px;
+  cursor:pointer;
+  position:relative;
+}
+.method-box:hover, .method-box.active{
+  background: #63C0FD;
+  color:#FFFFFF;
+}
+.method-box hr{
+  border-top: 1px solid rgba(255, 255, 255, 1);
+}
+.method-box p{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+
+}
+.method-box img{
+    position: absolute;
+    bottom: -17px;
+    right: -17px;
+}
+
+
+.colored-btn2{
+	border: 2px solid #63c0fd !important;
+    color: #007bff !important;
+    border-radius: 9px !important;
+	width: 220px;
+	background: unset;
+}
+.textCircle {
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    padding: 2px 5px;
+    background: #65c1fd;
+    color: #fff;
+    text-align: center;
+    font: 15px Arial, sans-serif;
+}
+.colored-btn2:hover, .colored-btn2.active{
+	color: #fff !important;
+	background: #63c0fd;
+}
+.colored-btn2:hover .textCircle,.colored-btn2.active .textCircle{
+	background: #fff;
+	color: #000;
+	font-weight: 700;
+}
+.sugg-label{
+	background: transparent;
+	width: 130px;
+	text-align: left;
+	white-space: normal;
+	color: #585D74;
+	vertical-align: middle;
+	line-height: 18px;
+	height: 40px;
+	cursor: text!important;
+}
+.sugg-value{
+	min-width: 60px;
+	background: #eee;
+	border-radius: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	font-size: 12px;
+	font-weight: 700;
+	color: #3E4873;
+	cursor: text!important;
+}
+.sugg-btn{
+	border-radius: 5px;
+	width: 80%;
+	background: #65c1fd;
+	color: #fff;
+}
+
+
+.progressbar{
+  /* Background */
+  background:#63c0fd69;
+  opacity: 1;
+  border-radius: 8px;
+  width:100%;
+  height:16px;
+}
+
+.progressbar .circle{
+  margin:4px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background: #0183D9;
+  opacity:0.8;
+}
+.progressbar .circle:first-child,.progressbar .circle:last-child{
+  opacity:0;
+}
+.progressbar .percentage{
+  border-radius:8px;
+  /*background: -webkit-linear-gradient(to right, #0183D9 var(--p), #63c0fd 0%);
+  background: -moz-linear-gradient(to right, #0183D9 var(--p), #63c0fd69 0%);
+  background: -ms-linear-gradient(to right, #0183D9 var(--p), #63c0fd69 0%);
+  background: linear-gradient(to right, #0183D9 var(--p), #63c0fd69 0%);*/
+}
+.complete-text{
+  color:#0183D9;
+  font-weight:bold;
+}
+.complete-text.small{
+  opacity:0.8;
+}
+.backBtn{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: normal;
+  color: #3E4873;
+}
+.nextBtn{
+  font-family: NunitoSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: normal;
+  color: #FFFFFF;
+  background: #63C0FD;
+  border-radius: 10px;
+}
+
+.tab-pane h3{
+	height: 80px;
+}
+.tab-pane img{
+ height: 50px;
+}
+
+.spinner{
+  background: #FFFFFF;
+  /* Blue */
+  border: 6px solid #63C0FD;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.spinner .minus,.spinner .plus{
+  /*width: 173px; */
+    /* height: 174px; */
+    font-family: NunitoSans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: normal;
+    text-align: center;
+    color: #3E4873;
+    padding: 28px 50px;
+
+}
+.spinner .spinner-input{
+    width: 300px;
+    height: 192px;
+    font-size: 100px;
+    border: none;
+    text-align: center;
+    color: #3E4873;
+}
+.spinner input[type=number]::-webkit-inner-spin-button,
+.spinner input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.currencyinput {
+    font-size: 100px;
+    border: none;
+}
+.currencyinput input {
+    border: 0;
+}
+.sectionRotate,.chip-away:not(:first-child),#products-section{
+	display: none;
+}
+.debt_institution_name{
+  min-height:48px;
+	/* width: 90%; */
+	/* margin: 0 auto; */
+}
+.tab-tile p{
+  min-height:54px;
+}

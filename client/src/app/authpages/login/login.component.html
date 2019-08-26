@@ -1,0 +1,48 @@
+<div class="row login-page">
+  <div class="floating-form">
+    <div class="card login-card">
+      <div class="card-body px-3 py-3">
+		  <div class="login-small-logo mt-2">
+			<img src="assets/images/login-small-logo.png" width="110" />
+		  </div>
+          <form [formGroup]="loginForm" novalidate (ngSubmit)="login()" class="px-1 py-4 mb-5">
+                <h3 class="mb-4 mt-5 text-center login-heading" [hidden]="forgotPass">Sign in to Chunk</h3>
+                <h3 class="mb-4  text-center login-heading" [hidden]="!forgotPass">Forgot Password</h3>
+                <div id="response">
+                </div>
+                <div [hidden]="forgotPass" class="text-center">
+                  <div class="form-group floating-label">
+                      <input type="email" placeholder="Email" class="form-control floating-input login-email mb-3" formControlName="email"  [(ngModel)]="credentials.email" required>
+                      <span class="highlight"></span>
+                      <label>Email</label>
+                  </div>
+                  <div class="form-group mb-0 floating-label">
+                          <input [attr.type]="eyeOpen" placeholder="Password" class="form-control login-password floating-input" id="pwd" formControlName="password"  [(ngModel)]="credentials.password" aria-describedby="passview" required>
+                          <span class="eye-drop"  [hidden]="eyeOpen=='text'" (click)="togglePwd()"><i class="far fa-eye-slash" ></i></span>
+                          <span class="eye-drop"  [hidden]="eyeOpen=='password'" (click)="togglePwd()"><i class="far fa-eye"></i></span>
+                          <span class="highlight"></span>
+                          <label>Password</label>
+                  </div>
+				  <p class="text-center"><a (click)="forgotPass = true" class="forgot-link">Forgot your password?</a></p>
+                  <button type="submit" [disabled]="loginForm.invalid" class="btn btn-default submit-btn mb-3  mt-2">SIGN IN</button>
+                  <p class="text-center sign-up-statement">Don't have an account? <a href="register" class="base-color link">Create Account</a></p>
+                </div>
+                <div [hidden]="!forgotPass" class="text-center">
+                  <div class="form-group  floating-label">
+                       <input type="email" placeholder="Email" class="form-control  floating-input login-email" formControlName="email"  [(ngModel)]="credentials.email" required>
+                      <span class="highlight"></span>
+                      <label>Email</label>
+                  </div>
+                  <button type="button" [disabled]="loginForm.controls.email.invalid" class="btn btn-default submit-btn mb-3 mt-2" (click)="forgot()">SEND RESET LINK
+                  </button>
+                  <p class="text-center sign-up-statement">Don't have an account? <a href="register" class="base-color forgot-link">Create Account</a></p>
+                  <p class="text-center"><a (click)="forgotPass = false" href="#" class="base-color forgot-link">Log In</a></p>
+                </div>
+          </form>
+
+      </div>
+	  <div>
+	  </div>
+    </div>
+  </div>
+</div>
