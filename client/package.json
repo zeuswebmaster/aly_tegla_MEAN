@@ -28,7 +28,7 @@
     "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
     "d3": "^5.7.0",
-    "highcharts": "^7.0.1",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.3.1",
     "highcharts-more": "^0.1.7",
     "jquery": "^3.3.1",
