@@ -25,7 +25,7 @@
     "angular-highcharts": "^6.2.6",
     "bootstrap": "^4.2.1",
     "bootstrap-slider": "^10.2.1",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "d3": "^5.7.0",
     "highcharts": "^7.0.1",
